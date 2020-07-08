@@ -46,13 +46,43 @@ namespace ClassLibrary1 {
             }
         }
 
-        public UserRole UserRole1 {
+        public int ID {
             get => default;
             set {
             }
         }
 
-        public int ID {
+        public List<Booking> ReservationHistory {
+            get => default;
+            set {
+            }
+        }
+
+        public List<Restaurant> FavouriteRestaurants {
+            get => default;
+            set {
+            }
+        }
+
+        public List<Restaurant> CurrentReservations {
+            get => default;
+            set {
+            }
+        }
+
+        public int CalendarHandler {
+            get => default;
+            set {
+            }
+        }
+
+        public int SMSHandler {
+            get => default;
+            set {
+            }
+        }
+
+        public int PayPalHandler {
             get => default;
             set {
             }
@@ -63,6 +93,10 @@ namespace ClassLibrary1 {
         }
 
         public bool Login() {
+            throw new System.NotImplementedException();
+        }
+
+        public void GetAllReservations() {
             throw new System.NotImplementedException();
         }
     }

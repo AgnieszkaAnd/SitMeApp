@@ -40,12 +40,6 @@ namespace ClassLibrary1 {
             }
         }
 
-        public Table Table {
-            get => default;
-            set {
-            }
-        }
-
         public int ID {
             get => default;
             set {

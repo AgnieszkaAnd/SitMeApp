@@ -3,24 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace ClassLibrary1 {
-    public abstract class Booking : IBooking {
-        public User User {
-            get => default;
-            set {
-            }
-        }
-
-        public DateTime DateCreated {
-            get => default;
-            set {
-            }
-        }
-
-        public User User1 {
-            get => default;
-            set {
-            }
-        }
+    public abstract class Booking {
 
         public int ID {
             get => default;
@@ -40,7 +23,13 @@ namespace ClassLibrary1 {
             }
         }
 
-        public TimeSpan TimeSlot {
+        public TimeSpan TimeSpan {
+            get => default;
+            set {
+            }
+        }
+
+        public System.DateTime Date {
             get => default;
             set {
             }

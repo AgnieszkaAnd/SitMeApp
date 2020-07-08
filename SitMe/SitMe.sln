@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SitMe", "SitMe.csproj", "{3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "..\ClassLibrary1\ClassLibrary1.csproj", "{FFCB64DE-3DB7-4519-9AB1-C2312E2C8012}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary2-RepositoryServicePattern", "..\ClassLibrary2-RepositoryServicePattern\ClassLibrary2-RepositoryServicePattern.csproj", "{F9F5A573-2300-4E8C-A0E1-B8CEE75A5301}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FFCB64DE-3DB7-4519-9AB1-C2312E2C8012}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFCB64DE-3DB7-4519-9AB1-C2312E2C8012}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFCB64DE-3DB7-4519-9AB1-C2312E2C8012}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9F5A573-2300-4E8C-A0E1-B8CEE75A5301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F5A573-2300-4E8C-A0E1-B8CEE75A5301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F5A573-2300-4E8C-A0E1-B8CEE75A5301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9F5A573-2300-4E8C-A0E1-B8CEE75A5301}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

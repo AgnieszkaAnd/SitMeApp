@@ -45,11 +45,5 @@ namespace ClassLibrary1 {
             set {
             }
         }
-
-        public TableType TableType {
-            get => default;
-            set {
-            }
-        }
     }
 }
