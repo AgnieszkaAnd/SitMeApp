@@ -1,5 +1,9 @@
 v16/
 .vs/
+.vscode/
 
-obj/
 bin/
+obj/
+
+!README.md
+/*.zip
