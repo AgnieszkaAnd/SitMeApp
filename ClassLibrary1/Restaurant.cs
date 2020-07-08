@@ -1,0 +1,55 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ClassLibrary1 {
+    public class Restaurant {
+        public string Name {
+            get => default;
+            set {
+            }
+        }
+
+        public string Address {
+            get => default;
+            set {
+            }
+        }
+
+        public string Description {
+            get => default;
+            set {
+            }
+        }
+
+        public HashSet Tags {
+            get => default;
+            set {
+            }
+        }
+
+        public Enum Pricing {
+            get => default;
+            set {
+            }
+        }
+
+        public List<Table> Tables {
+            get => default;
+            set {
+            }
+        }
+
+        public Table Table {
+            get => default;
+            set {
+            }
+        }
+
+        public int ID {
+            get => default;
+            set {
+            }
+        }
+    }
+}
