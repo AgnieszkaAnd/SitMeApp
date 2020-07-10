@@ -34,5 +34,29 @@ namespace ClassLibrary1 {
             set {
             }
         }
+
+        public Restaurant Restaurant {
+            get => default;
+            set {
+            }
+        }
+
+        public Table Table {
+            get => default;
+            set {
+            }
+        }
+
+        public bool isConfirmed {
+            get => default;
+            set {
+            }
+        }
+
+        public User User {
+            get => default;
+            set {
+            }
+        }
     }
 }

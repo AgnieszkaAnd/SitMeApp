@@ -6,12 +6,9 @@
   <Class Name="ClassLibrary1.User">
     <Position X="0.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAACAAgAAAAAAAAAAAABABAAgCAIAQAAAAAAg=</HashCode>
+      <HashCode>AAAEAEgAACAAgAAAIAAAEAAAAJABAAgCgIAQgAAAAAg=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="UserRole1" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.TableBooking">
     <Position X="4.25" Y="5.5" Width="1.5" />
@@ -27,23 +24,16 @@
   <Class Name="ClassLibrary1.Booking">
     <Position X="5.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQBAAAAAAAAgAAAIAAAAABAAAAAAAAAAAAEAAAIAAA=</HashCode>
+      <HashCode>IAQAAAAAAAAAgAAAAAAAQAAAAAAAAAABAAQAAAAIAAA=</HashCode>
       <FileName>Booking.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="User1" />
-    </ShowAsAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ClassLibrary1.Table">
     <Position X="1.75" Y="7.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAQAAAAAgBAAAAAAAAAAAAAAgEACAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAQAAAAAgBAAAAAAAAAAAAAAgEAAAQAAAAAAAAA=</HashCode>
       <FileName>Table.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="TableType" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.Restaurant">
     <Position X="6.5" Y="7.75" Width="1.5" />
@@ -51,9 +41,6 @@
       <HashCode>AAAAAAAAAAAggAAAgAAAQAQAAAAAAEACAAAAAAAAAAA=</HashCode>
       <FileName>Restaurant.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Table" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="ClassLibrary1.RestaurantBooking">
     <Position X="6.25" Y="5.5" Width="2" />

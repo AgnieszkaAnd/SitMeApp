@@ -1,30 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ClassLibrary1.User">
-    <Position X="1" Y="2.25" Width="1.5" />
+    <Position X="0.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAACAAgAAAAAAAEAAAAJABAAgCgIAQAAAAAAg=</HashCode>
+      <HashCode>AAAEAEgAACAAgAAAIAAAEAAAAJABAAgCgIAQgAAAAAg=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Booking">
     <Position X="2.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQBAAAAAAAAgAAAAAAAAABAAAAAAAAAAAAEAAAIAAA=</HashCode>
+      <HashCode>IAQBAAAAAAAAgAAAAAAAQAAAAAAAAAABAAQAAAAIIAA=</HashCode>
       <FileName>Booking.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+    </ShowAsAssociation>
   </Class>
-  <Class Name="ClassLibrary1.Table" Collapsed="true">
+  <Class Name="ClassLibrary1.Table">
     <Position X="6.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAQAAAAAgBAAAAAAAAAAAAAAgEAAAQAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgBAAAAAAgBAAUAAAAAAAAAAAgEAAAQAAAAAAAAA=</HashCode>
       <FileName>Table.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ClassLibrary1.Restaurant" Collapsed="true">
+  <Class Name="ClassLibrary1.Restaurant">
     <Position X="4.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAggAAAgAAAQAQAAAAAAEACAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAggAAAgAAgQAQAAAAAAEACAIAAAAAAQAA=</HashCode>
       <FileName>Restaurant.cs</FileName>
     </TypeIdentifier>
   </Class>

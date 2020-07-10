@@ -22,7 +22,7 @@ namespace ClassLibrary1 {
             }
         }
 
-        public bool isReserved {
+        public List<Reservation> Reservations {
             get => default;
             set {
             }
@@ -41,6 +41,18 @@ namespace ClassLibrary1 {
         }
 
         public Enum Type {
+            get => default;
+            set {
+            }
+        }
+
+        public bool isVisibleForUsers {
+            get => default;
+            set {
+            }
+        }
+
+        public int MaxNbOfSeats {
             get => default;
             set {
             }

@@ -45,5 +45,23 @@ namespace ClassLibrary1 {
             set {
             }
         }
+
+        public List<User> Managers {
+            get => default;
+            set {
+            }
+        }
+
+        public string Telephone {
+            get => default;
+            set {
+            }
+        }
+
+        public string MenuLink {
+            get => default;
+            set {
+            }
+        }
     }
 }
