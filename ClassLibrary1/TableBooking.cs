@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace ClassLibrary1 {
-    public class TableBooking : Booking {
+    public class TableBooking : Reservtion {
         public Restaurant Restaurant {
             get => default;
             set {

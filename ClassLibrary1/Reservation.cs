@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace ClassLibrary1 {
-    public abstract class Booking {
+    public abstract class Reservation {
 
         public int ID {
             get => default;

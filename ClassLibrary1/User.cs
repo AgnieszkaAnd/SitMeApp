@@ -52,7 +52,7 @@ namespace ClassLibrary1 {
             }
         }
 
-        public List<Booking> ReservationHistory {
+        public List<Reservtion> ReservationHistory {
             get => default;
             set {
             }
