@@ -5,9 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataAccessLibary\DataAccessLibary.csproj" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
-
 
 
 </Project>
