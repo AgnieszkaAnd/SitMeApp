@@ -5,6 +5,26 @@ for details on configuring this project to bundle and minify static web assets. 
 /*---------------------- EDITED --------------------*/
 /*--------------------------------------------------*/
 
+.active-purple-2 input.form-control[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #ce93d8;
+    box-shadow: 0 1px 0 0 #ce93d8;
+}
+
+.active-purple input.form-control[type=text] {
+    border-bottom: 1px solid #ce93d8;
+    box-shadow: 0 1px 0 0 #ce93d8;
+}
+
+.cards {
+    display: flex;
+    column-count: 3;
+}
+
+.card {
+    display: flex;
+}
+
+
 .light-purple {
     background-color: #eadbf8;
 }
@@ -15,18 +35,7 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .img-restaurant-list {
-    margin-block: 10px;
-    width: 50px
-}
-
-aside {
-    width: 40%;
-    padding-left: .5rem;
-    margin-left: .5rem;
-    float: right;
-    box-shadow: inset 5px 0 5px -5px #29627e;
-    font-style: italic;
-    color: #29627e;
+    width: 100%
 }
 
 /*--------------------------------------------------*/
