@@ -36,44 +36,45 @@
         </div><!--/span-->
 
         <div class="col-12 col-md-9">
-            <div class="jumbotron">
+           @* <div class="jumbotron">
                 <h3>Placeholder for search bar</h3>
-            </div>
-            <div class="card-deck mb-3 text-center">
-                @for (int i = 0; i < 9; i++)
-                {
-                <div class="col-6 col-lg-4 light-purple">
-                    <img class="img-restaurant-list" width="100%" src="images/restaurant_pictures/bar-1846137_1920.jpg" alt="Resto picture" />
-                    <h3>The Best Restaurant</h3>
-                    <p class="tag-details-purple-font">Indian | $$ | Casual, Date</p>
-                    <img class="float-left" height="25px" src="images/logos/location/icon-1968240_640.png" alt="logoLocation">
-                    <p>Warsaw</p>
-                    <!--/span-->
-
-                </div>
-                }
-            </div><!--/row-->
-        </div><!--/span-->
-
-        <div class="card-deck mb-3 text-center">
-            <div class="card mb-4 box-shadow">
-                <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">Free</h4>
-                </div>
-                <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                    <ul class="list-unstyled mt-3 mb-4">
-                        <li>10 users included</li>
-                        <li>2 GB of storage</li>
-                        <li>Email support</li>
-                        <li>Help center access</li>
-                    </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
-                </div>
-            </div>
+            </div>*@
+            @for (int i = 0; i < 3; i++) {
+                <div class="card-deck mb-3 text-center">
+                    @for (int j = 0; j < 3; j++) {
+                    <div class="card mb-3 box-shadow">
+                        @*<div class="card-header">
+            <h4 class="my-0 font-weight-normal">Free</h4>
         </div>
+        <div class="card-body">
+            <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+                <li>10 users included</li>
+                <li>2 GB of storage</li>
+                <li>Email support</li>
+                <li>Help center access</li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+        </div>*@
 
 
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Free</h4>
+                        </div>
+
+                        <div class="card-body light-purple">
+                            <img class="img-restaurant-list" src="images/restaurant_pictures/bar-1846137_1920.jpg" alt="Resto picture" />
+                            <h3>The Best Restaurant</h3>
+                            <p class="tag-details-purple-font">Indian | $$ | Casual, Date</p>
+                            <img class="float-left" height="25px" src="images/logos/location/icon-1968240_640.png" alt="logoLocation">
+                            <p>Warsaw</p>
+                        </div>
+                    </div>
+                    }
+                </div><!--/row-->
+            }
+
+        </div><!--/span-->
 
         </div><!--/row-->
 
