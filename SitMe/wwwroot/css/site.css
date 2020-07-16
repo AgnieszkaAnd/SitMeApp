@@ -1,6 +1,38 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+/*--------------------------------------------------*/
+/*---------------------- EDITED --------------------*/
+/*--------------------------------------------------*/
+
+.light-purple {
+    background-color: #eadbf8;
+}
+
+.tag-details-purple-font {
+    color: #8c70b3;
+    margin-block: 0;
+}
+
+.img-restaurant-list {
+    margin-block: 10px;
+    width: 100%
+}
+
+aside {
+    width: 40%;
+    padding-left: .5rem;
+    margin-left: .5rem;
+    float: right;
+    box-shadow: inset 5px 0 5px -5px #29627e;
+    font-style: italic;
+    color: #29627e;
+}
+
+/*--------------------------------------------------*/
+/*--------------------------------------------------*/
+/*--------------------------------------------------*/
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;

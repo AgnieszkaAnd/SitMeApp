@@ -2,7 +2,97 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+
+<div class="container">
+
+    <div class="row row-offcanvas row-offcanvas-right">
+
+        <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
+            <h4>Filter by:</h4>
+            <div class="list-group">
+                <h6>Price</h6>
+                <a href="#" class="list-group-item active">$</a>
+                <a href="#" class="list-group-item">$$</a>
+                <a href="#" class="list-group-item">$$$</a>
+            </div>
+            <div class="list-group">
+                <h6>Cuisine</h6>
+                <a href="#" class="list-group-item active">Polish</a>
+                <a href="#" class="list-group-item">Italian</a>
+                <a href="#" class="list-group-item">Mexican</a>
+            </div>
+            <div class="list-group">
+                <h6>Occasion</h6>
+                <a href="#" class="list-group-item active">Date</a>
+                <a href="#" class="list-group-item">Casual</a>
+                <a href="#" class="list-group-item">Birthday</a>
+                <a href="#" class="list-group-item">Party</a>
+            </div>
+            <div class="list-group">
+                <a href="#" class="list-group-item active">Link</a>
+                <a href="#" class="list-group-item">Link</a>
+                <a href="#" class="list-group-item">Link</a>
+            </div>
+        </div><!--/span-->
+
+        <div class="col-12 col-md-9">
+            <div class="jumbotron">
+                <h3>Placeholder for search bar</h3>
+            </div>
+            <div class="card-deck mb-3 text-center">
+                @for (int i = 0; i < 9; i++)
+                {
+                <div class="col-6 col-lg-4 light-purple">
+                    <img class="img-restaurant-list" width="100%" src="images/restaurant_pictures/bar-1846137_1920.jpg" alt="Resto picture" />
+                    <h3>The Best Restaurant</h3>
+                    <p class="tag-details-purple-font">Indian | $$ | Casual, Date</p>
+                    <img class="float-left" height="25px" src="images/logos/location/icon-1968240_640.png" alt="logoLocation">
+                    <p>Warsaw</p>
+                    <!--/span-->
+
+                </div>
+                }
+            </div><!--/row-->
+        </div><!--/span-->
+
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Free</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>10 users included</li>
+                        <li>2 GB of storage</li>
+                        <li>Email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        </div><!--/row-->
+
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2017</p>
+    </footer>
+
+</div><!--/.container-->
+
+<div>
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <aside>
+        <p>Learn about</p>
+        <ul>
+            <li>one</li>
+            <li>two</li>
+        </ul>
+    </aside>
 </div>
