@@ -3,3 +3,7 @@ v16/
 
 obj/
 bin/
+
+# Database Project
+.dbmdl
+.jfm
