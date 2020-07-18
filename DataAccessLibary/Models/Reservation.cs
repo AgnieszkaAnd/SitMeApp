@@ -4,22 +4,14 @@ namespace DataAccessLibary.Models
 {
     public class Reservation
     {
-        public int ID { get; set; }
-
+        public Guid Id { get; set; }
+        public Guid UserId { get; set; }
+        public DateTime StartDateTime { get; set; }
+        public DateTime EndDateTime { get; set; }
+        public byte NbOfPeople { get; set; }
+        public string CustomerSpecialRequest { get; set; }
+        public bool IsConfirmed { get; set; }
         public bool CustomerArrived { get; set; }
 
-        public string CustomerSpecialRequest { get; set; }
-
-        public TimeSpan TimeSpan { get; set; }
-
-        public DateTime Date { get; set; }
-
-        public Restaurant Restaurant { get; set; }
-
-        public Table Table { get; set; }
-
-        public bool isConfirmed { get; set; }
-
-        public User User { get; set; }
     }
 }

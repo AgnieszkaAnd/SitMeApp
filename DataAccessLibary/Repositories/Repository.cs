@@ -17,10 +17,10 @@ namespace DataAccessLibary.Repositories
 
         public  Task<List<T>> GetAll()
         {
-            return _database.LoadData<T, object>(SqlResources.SelectAll, new { });
+            return _database.LoadData<T, object>(SqlResources.GetAll, new {table = typeof(T).Name});
         }
 
-        public Task<T> GetById(int Id)
+        public Task<T> GetById(int id)
         {
             return _database.LoadData<T, object>("select", new { })
                 .ContinueWith(t => t.Result.FirstOrDefault());
