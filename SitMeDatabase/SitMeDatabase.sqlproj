@@ -56,16 +56,43 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="dbo" />
-    <Folder Include="dbo\Tables" />
-    <Folder Include="dbo\Queries" />
     <Folder Include="PublishLocations" />
-    <Folder Include="dbo\Stored Procedures" />
+    <Folder Include="Admin\" />
+    <Folder Include="Admin\Tables\" />
+    <Folder Include="Client\" />
+    <Folder Include="Client\Tables\" />
+    <Folder Include="Manager\" />
+    <Folder Include="Manager\Tables\" />
+    <Folder Include="Scripts\" />
+    <Folder Include="Security" />
+    <Folder Include="Compares" />
+    <Folder Include="Queries" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PublishLocations\SitMeDatabase.publish.xml" />
+    <None Include="Compares\LocalDBCompare.scmp" />
+    <None Include="Queries\GetAll.sql" />
+    <None Include="Queries\GetById.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\User.sql" />
+    <Build Include="Admin\Tables\UserRole.sql" />
+    <Build Include="Client\Tables\User.sql" />
+    <Build Include="Admin\Tables\UserUserRole.sql" />
+    <Build Include="Client\Tables\Reservation.sql" />
+    <Build Include="Manager\Tables\Restaurant.sql" />
+    <Build Include="Manager\Tables\TableType.sql" />
+    <Build Include="Manager\Tables\Table.sql" />
+    <Build Include="Client\Tables\ReservationTable.sql" />
+    <Build Include="Client\Tables\UserRestaurant.sql" />
+    <Build Include="Manager\Tables\TagGroup.sql" />
+    <Build Include="Manager\Tables\Tag.sql" />
+    <Build Include="Manager\Tables\RestaurantTag.sql" />
+    <None Include="Scripts\ScriptsIgnoredOnImport.sql" />
+    <Build Include="Security\Admin.sql" />
+    <Build Include="Security\Client.sql" />
+    <Build Include="Security\Manager.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="SitMeDatabase.refactorlog" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,6 @@
+﻿CREATE TABLE [Admin].[UserRole] (
+    [Id]   UNIQUEIDENTIFIER CONSTRAINT [DF_UserRole_Id] DEFAULT (newid()) NOT NULL,
+    [Name] NVARCHAR (20)    NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+

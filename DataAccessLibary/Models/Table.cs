@@ -5,22 +5,14 @@ namespace DataAccessLibary.Models
 {
     public class Table
     {
-        public int NbOfSeats { get; set; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+        public Guid TableTypeId { get; set; }
+        public byte MaxNbOfSeats { get; set; }
+        public byte[] Picture { get; set; }
+        public string LocationInRestaurant { get; set; }
+        public bool IsVisibleForUsers { get; set; }
+        public Guid RestaurantId { get; set; }
 
-        public string Picture { get; set; }
-
-        //public HashSet Tags { get; set; }
-
-        public List<Reservation> Reservations { get; set; }
-
-        public int ID { get; set; }
-
-        //public Tuple LocationInRestaurant { get; set; }
-
-        public Enum Type { get; set; }
-
-        public bool isVisibleForUsers { get; set; }
-
-        public int MaxNbOfSeats { get; set; }
     }
 }
