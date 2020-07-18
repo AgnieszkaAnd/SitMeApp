@@ -61,11 +61,11 @@ namespace DataAccessLibary {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT * FROM COS;.
+        ///   Looks up a localized string similar to Select * from [Client].@table;.
         /// </summary>
-        public static string SelectAll {
+        public static string GetAll {
             get {
-                return ResourceManager.GetString("SelectAll", resourceCulture);
+                return ResourceManager.GetString("GetAll", resourceCulture);
             }
         }
     }
