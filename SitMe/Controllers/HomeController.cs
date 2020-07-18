@@ -23,6 +23,10 @@ namespace SitMe.Controllers
             return View();
         }
 
+        public IActionResult RestaurantProfile() {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();

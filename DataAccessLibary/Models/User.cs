@@ -17,11 +17,11 @@ namespace DataAccessLibary.Models
 
         public string Telephone { get; set; }
 
-        public UserRole UserRole { get; set; }
+        //public UserRole UserRole { get; set; }
 
         public int ID { get; set; }
 
-        public List<Reservtion> ReservationHistory { get; set; }
+        //public List<Reservtion> ReservationHistory { get; set; }
 
         public List<Restaurant> FavouriteRestaurants { get; set; }
 

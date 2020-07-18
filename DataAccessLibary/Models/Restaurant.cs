@@ -11,7 +11,7 @@ namespace DataAccessLibary.Models
 
         public string Description { get; set; }
 
-        public HashSet Tags { get; set; }
+        //public HashSet Tags { get; set; }
 
         public Enum Pricing { get; set; }
 
