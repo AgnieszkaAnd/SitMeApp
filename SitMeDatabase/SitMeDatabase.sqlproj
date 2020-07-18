@@ -73,6 +73,7 @@
     <None Include="Compares\LocalDBCompare.scmp" />
     <None Include="Queries\GetAll.sql" />
     <None Include="Queries\GetById.sql" />
+    <None Include="Queries\DeleteById.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Admin\Tables\UserRole.sql" />

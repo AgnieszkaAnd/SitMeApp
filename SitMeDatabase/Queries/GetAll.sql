@@ -1,1 +1,1 @@
-﻿Select * from [Client].[@table];
+﻿Select * from [Client].[User];

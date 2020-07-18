@@ -61,11 +61,33 @@ namespace DataAccessLibary {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Select * from [Client].@table;.
+        ///   Looks up a localized string similar to Delete
+        ///from @table
+        ///where [id] = @Id;.
+        /// </summary>
+        public static string DeleteById {
+            get {
+                return ResourceManager.GetString("DeleteById", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select * from @table;.
         /// </summary>
         public static string GetAll {
             get {
                 return ResourceManager.GetString("GetAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select * 
+        ///From @table
+        ///Where [id] = @Id;.
+        /// </summary>
+        public static string GetById {
+            get {
+                return ResourceManager.GetString("GetById", resourceCulture);
             }
         }
     }

@@ -5,5 +5,5 @@ obj/
 bin/
 
 # Database Project
-.dbmdl
-.jfm
+*.dbmdl
+*.jfm

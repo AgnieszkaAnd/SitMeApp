@@ -3,42 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLibary.Models;
 
 namespace DataAccessLibary.Repositories
 {
-    public class Repository<T> : IRepository<T> where T: class, new()
+    public class Repository<T> : IRepository<T> where T : class, new()
     {
         private readonly ISqlDataAccess _database;
+        private readonly string _tableName;
 
         public Repository(ISqlDataAccess database)
         {
             _database = database;
+            _tableName = (string)typeof(T).GetField("TableName").GetValue(null);
         }
 
         public  Task<List<T>> GetAll()
         {
-            return _database.LoadData<T, object>(SqlResources.GetAll, new {table = typeof(T).Name});
+            var query = QueryBuilder(SqlResources.GetAll);
+            return _database.LoadData<T, object>(query, new {});
         }
 
-        public Task<T> GetById(int id)
+        public Task<T> GetById(Guid id)
         {
-            return _database.LoadData<T, object>("select", new { })
+            var query = QueryBuilder(SqlResources.GetById);
+            return _database.LoadData<T, object>(query, new {Id = id })
                 .ContinueWith(t => t.Result.FirstOrDefault());
         }
 
         public Task Insert(T entity)
         {
-            return _database.SaveData("insert", entity);
+            var query = QueryBuilder(SqlResources.GetAll);
+            return _database.SaveData(query, entity);
         }
 
         public Task Update(T entity)
         {
-            return _database.SaveData("update", entity);
+            var query = QueryBuilder(SqlResources.GetAll);
+            return _database.SaveData(query, entity);
         }
-        public Task Delete(T entity)
+        public Task DeleteById(Guid id)
         {
-            return _database.SaveData("delete", entity);
+            var query = QueryBuilder(SqlResources.DeleteById);
+            return _database.SaveData(query, new { Id = id });
         }
-
+        private string QueryBuilder(string queryTemplate) => queryTemplate.Replace("@table", _tableName);
     }
 }

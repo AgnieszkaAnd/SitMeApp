@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-
+@model User
 <!---->
 <div class="container">
 
@@ -46,7 +46,10 @@
             </form>
 
             <div class="jumbotron">
-                <h3>Placeholder for search bar</h3>
+                <h3>Placeholder for search bar.</h3>
+                <br/>
+                <h5>Data loaded from the database:</h5>
+                <h3>@Model.FirstName @Model.LastName</h3>
             </div>
 
             @for (int i = 0; i < 3; i++) {
