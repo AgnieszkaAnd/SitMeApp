@@ -5,7 +5,7 @@ namespace DataAccessLibary.Models
 {
     public class Table
     {
-        public static string TableName = "[Manager].[Table]";
+        public static readonly string TableName = "[Manager].[Table]";
         public Guid Id { get; set; }
         public string Name { get; set; }
         public Guid TableTypeId { get; set; }

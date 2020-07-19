@@ -5,7 +5,7 @@ namespace DataAccessLibary.Models
 {
     public class User
     {
-        public static string TableName = "[Client].[User]";
+        public static readonly string TableName = "[Client].[User]";
         public Guid Id { get; set; }
         public string Nick { get; set; }
         public string Email { get; set; }

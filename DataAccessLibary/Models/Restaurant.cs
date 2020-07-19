@@ -5,7 +5,7 @@ namespace DataAccessLibary.Models
 {
     public class Restaurant
     {
-        public static string TableName = "[Manager].[Restaurant]";
+        public static readonly string TableName = "[Manager].[Restaurant]";
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string City { get; set; }

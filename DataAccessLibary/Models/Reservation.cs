@@ -4,7 +4,7 @@ namespace DataAccessLibary.Models
 {
     public class Reservation
     {
-        public static string TableName = "[Client].[Reservation]";
+        public static readonly string TableName = "[Client].[Reservation]";
         public Guid Id { get; set; }
         public Guid UserId { get; set; }
         public DateTime StartDateTime { get; set; }
