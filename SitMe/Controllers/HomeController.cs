@@ -39,6 +39,15 @@ namespace SitMe.Controllers
             return View();
         }
 
+
+        public IActionResult CreateReservation() {
+            return View();
+        }
+
+        public IActionResult ThankYou() {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
