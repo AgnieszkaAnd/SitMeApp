@@ -10,47 +10,45 @@
 
         <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
             <h4>Filter by:</h4>
-            <div class="list-group">
+            <div class="list-group list-group-flush">
                 <h6>Price</h6>
-                <a href="#" class="list-group-item active">$</a>
-                <a href="#" class="list-group-item">$$</a>
-                <a href="#" class="list-group-item">$$$</a>
+                <a href="#" class="list-group-item list-group-item-action ">$</a>
+                <a href="#" class="list-group-item list-group-item-action  active">$$</a>
+                <a href="#" class="list-group-item list-group-item-action ">$$$</a>
             </div>
-            <div class="list-group">
+            <br />
+            <div class="list-group list-group-flush">
                 <h6>Cuisine</h6>
-                <a href="#" class="list-group-item active">Polish</a>
-                <a href="#" class="list-group-item">Italian</a>
-                <a href="#" class="list-group-item">Mexican</a>
+                <a href="#" class="list-group-item list-group-item-action  active">Polish</a>
+                <a href="#" class="list-group-item list-group-item-action ">Italian</a>
+                <a href="#" class="list-group-item list-group-item-action ">Mexican</a>
             </div>
-            <div class="list-group">
+            <br />
+            <div class="list-group list-group-flush">
                 <h6>Occasion</h6>
-                <a href="#" class="list-group-item active">Date</a>
-                <a href="#" class="list-group-item">Casual</a>
-                <a href="#" class="list-group-item">Birthday</a>
-                <a href="#" class="list-group-item">Party</a>
-            </div>
-            <div class="list-group">
-                <a href="#" class="list-group-item active">Link</a>
-                <a href="#" class="list-group-item">Link</a>
-                <a href="#" class="list-group-item">Link</a>
+                <a href="#" class="list-group-item list-group-item-action  active">Date</a>
+                <a href="#" class="list-group-item list-group-item-action ">Casual</a>
+                <a href="#" class="list-group-item list-group-item-action ">Birthday</a>
+                <a href="#" class="list-group-item list-group-item-action ">Party</a>
             </div>
         </div><!--/span-->
 
         <div class="col-12 col-md-9">
 
             <!-- Search form -->
-            <form class="form-inline d-flex justify-content-center md-form form-sm active-purple active-purple-2 mt-2">
-                <i class="fas fa-search" aria-hidden="true"></i>
-                <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
-                       aria-label="Search">
+            <form class="form-inline active-purple active-purple-2 mt-2">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <input type="text" class="form-control" placeholder="nr of ppl" id="nbofppl">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <input type="text" class="form-control" placeholder="date" id="date">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" placeholder="City, Restaurant" id="sth">
+                    </div>
+                </div>
             </form>
-
-            <div class="jumbotron">
-                <h3>Placeholder for search bar.</h3>
-                <br/>
-                <h5>Data loaded from the database:</h5>
-                <h3>@Model.FirstName @Model.LastName</h3>
-            </div>
 
             @for (int i = 0; i < 3; i++) {
                 <div class="card-deck mb-3 text-center">
@@ -75,9 +73,4 @@
 
     <hr>
 
-    <footer>
-        <p>&copy; Company 2017</p>
-    </footer>
-
 </div><!--/.container-->
--->
