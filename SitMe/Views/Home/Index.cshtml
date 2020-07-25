@@ -10,26 +10,57 @@
 
         <div class="col-6 col-md-3 sidebar-offcanvas" id="sidebar">
             <h4>Filter by:</h4>
-            <div class="list-group list-group-flush">
-                <h6>Price</h6>
-                <a href="#" class="list-group-item list-group-item-action ">$</a>
-                <a href="#" class="list-group-item list-group-item-action  active">$$</a>
-                <a href="#" class="list-group-item list-group-item-action ">$$$</a>
-            </div>
-            <br />
-            <div class="list-group list-group-flush">
-                <h6>Cuisine</h6>
-                <a href="#" class="list-group-item list-group-item-action  active">Polish</a>
-                <a href="#" class="list-group-item list-group-item-action ">Italian</a>
-                <a href="#" class="list-group-item list-group-item-action ">Mexican</a>
-            </div>
-            <br />
-            <div class="list-group list-group-flush">
-                <h6>Occasion</h6>
-                <a href="#" class="list-group-item list-group-item-action  active">Date</a>
-                <a href="#" class="list-group-item list-group-item-action ">Casual</a>
-                <a href="#" class="list-group-item list-group-item-action ">Birthday</a>
-                <a href="#" class="list-group-item list-group-item-action ">Party</a>
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                Price
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="list-group list-group-flush dropdown-toggle">
+                            <a href="#" class="list-group-item list-group-item-action ">$</a>
+                            <a href="#" class="list-group-item list-group-item-action  active">$$</a>
+                            <a href="#" class="list-group-item list-group-item-action ">$$$</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Cuisine
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action  active">Polish</a>
+                            <a href="#" class="list-group-item list-group-item-action ">Italian</a>
+                            <a href="#" class="list-group-item list-group-item-action ">Mexican</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Occasion
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action  active">Date</a>
+                            <a href="#" class="list-group-item list-group-item-action ">Casual</a>
+                            <a href="#" class="list-group-item list-group-item-action ">Birthday</a>
+                            <a href="#" class="list-group-item list-group-item-action ">Party</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div><!--/span-->
 
@@ -38,14 +69,17 @@
             <!-- Search form -->
             <form class="form-inline active-purple active-purple-2 mt-2">
                 <div class="form-row">
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-2">
                         <input type="text" class="form-control" placeholder="nr of ppl" id="nbofppl">
                     </div>
-                    <div class="form-group col-md-3">
+                    <div class="form-group col-md-2">
                         <input type="text" class="form-control" placeholder="date" id="date">
                     </div>
                     <div class="form-group col-md-6">
                         <input type="text" class="form-control" placeholder="City, Restaurant" id="sth">
+                    </div>
+                    <div class="form-group col-md-2">
+                        <input type="submit" class="form-control" value="Find table">
                     </div>
                 </div>
             </form>
