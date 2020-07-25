@@ -195,6 +195,12 @@
     border-radius: 4px;
     box-sizing: border-box;
   }
+
+input[type=submit], select {
+    margin: 8px 0;
+    color: white;
+    background-color: #8d55c6;
+}
   
   .date-time {
     display: inline;
@@ -221,3 +227,26 @@
     width: 100%;
     font-weight: bold;
   }
+
+  i {
+      margin: inherit;
+  }
+
+.card-header {
+    background-color: #8d55c6;
+}
+
+.btn-link {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-link:active {
+    text-decoration: none;
+    font-weight: bold;
+}
