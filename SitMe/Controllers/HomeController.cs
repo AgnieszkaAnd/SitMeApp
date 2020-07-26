@@ -15,11 +15,15 @@ namespace SitMe.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IRepository<User> _userRepository;
+        private readonly IRepository<Restaurant> _restaurantRepository;
 
-        public HomeController(ILogger<HomeController> logger, IRepository<User> userRepository)
+        public HomeController(  ILogger<HomeController> logger,
+                                IRepository<User> userRepository,
+                                IRepository<Restaurant> restaurantRepository)
         {
             _logger = logger;
-            _userRepository = userRepository;  
+            _userRepository = userRepository;
+            _restaurantRepository = restaurantRepository;
         }
 
         public async Task<IActionResult> Index()
@@ -37,6 +41,11 @@ namespace SitMe.Controllers
 
         public IActionResult RestaurantProfile() {
             return View();
+        }
+
+        public async Task<IActionResult> RestaurantList() {
+            var restaurants = await _restaurantRepository.GetAll();
+            return View(restaurants);
         }
 
 
