@@ -246,7 +246,17 @@ input[type=submit], select {
     text-decoration: none;
 }
 
-.btn-link:active {
+.btn-link:focus {
     text-decoration: none;
     font-weight: bold;
+}
+
+.list-group-item.active {
+    background-color: #eadbf8;
+    border-color: #eadbf8;
+    color: #000000;
+}
+
+#filter-restaurants {
+    margin-block: 1rem;
 }
