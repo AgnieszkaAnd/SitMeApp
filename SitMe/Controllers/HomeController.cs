@@ -28,15 +28,7 @@ namespace SitMe.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var users = await _userRepository.GetAll();
-            var user = await _userRepository.GetById(new Guid("a8a5bcb8-e2c4-4fac-838b-248d0612ca34"));
-            user.FirstName = "Honorat" + users.Count.ToString();
-            await _userRepository.Update(user);
-            users[^1].FirstName = "test";
-            users[^1].Id = Guid.NewGuid();
-            await _userRepository.Insert(users[^1]);
-            //await _userRepository.DeleteById(users[^1].Id);
-            return View(user);
+            return View();
         }
 
         public IActionResult RestaurantProfile() {
@@ -44,7 +36,8 @@ namespace SitMe.Controllers
         }
 
         public async Task<IActionResult> RestaurantList() {
-            var restaurants = await _restaurantRepository.GetAll();
+            // many to many query
+            var restaurants = await _restaurantRepository.GetAllRestaurantsJoinedTags();
             return View(restaurants);
         }
 

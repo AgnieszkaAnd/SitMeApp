@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Dapper;
 using DataAccessLibary.Models;
+using Microsoft.Extensions.Configuration;
 
 namespace DataAccessLibary.Repositories
 {
@@ -14,11 +17,19 @@ namespace DataAccessLibary.Repositories
         private readonly string _tableName;
         private readonly List<string> _properties;
 
-        public Repository(ISqlDataAccess database)
+
+        //TODO: consider refactoring
+        private readonly IConfiguration _configuration;
+        public string ConnectionStringName { get; set; } = "Default";
+
+
+        public Repository(ISqlDataAccess database, IConfiguration configuration)
         {
             _database = database;
             _tableName = typeof(T).GetField("TableName")?.GetValue(null)?.ToString();
             _properties = typeof(T).GetProperties().Select(p => p.Name).ToList();
+
+            _configuration = configuration;
         }
 
         public  Task<List<T>> GetAll()
@@ -49,6 +60,36 @@ namespace DataAccessLibary.Repositories
         {
             var query = CreateUpdateQuery();
             return _database.SaveData(query, entity);
+        }
+
+        //TODO: consider refactoring
+        public async Task<List<Restaurant>> GetAllRestaurantsJoinedTags()
+        {
+            List<Restaurant> myResult = new List<Restaurant>();
+
+            var connectionString = _configuration.GetConnectionString(ConnectionStringName);
+            using (var connection = new SqlConnection(connectionString)) {
+                var sql = @"select * from [Manager].[Restaurant] r 
+                    inner join [Manager].[RestaurantTag] rt on rt.RestaurantId = r.Id
+                    inner join [Manager].[Tag] t on t.Id = rt.TagId";
+                var restaurants = await connection.QueryAsync<Restaurant, Tag, Restaurant>(sql, (restaurant, tag) =>
+                {
+                    restaurant.Tags.Add(tag);
+                    return restaurant;
+                }, new{}, splitOn: "Name");
+                
+                var result = restaurants.GroupBy(r => r.Name).Select(g =>
+                {
+                    var groupedRestaurant = g.First();
+                    groupedRestaurant.Tags = g.Select(r => r.Tags.Single()).ToList();
+                    return groupedRestaurant;
+                });
+
+                foreach (var restaurant in result) {
+                    myResult.Add(restaurant);
+                }
+            }
+            return myResult;
         }
 
         private string CreateInsertQuery()

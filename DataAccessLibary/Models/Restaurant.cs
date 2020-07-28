@@ -17,6 +17,7 @@ namespace DataAccessLibary.Models
         public string MenuLink { get; set; }
         public TimeSpan OpeningTime { get; set; }
         public TimeSpan CloseTime { get; set; }
+        public List<Tag> Tags { get; set; } = new List<Tag>();
 
     }
 }

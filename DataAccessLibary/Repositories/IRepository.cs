@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using DataAccessLibary.Models;
 
@@ -12,5 +13,8 @@ namespace DataAccessLibary.Repositories
         Task Insert(T entity);
         Task Update(T entity);
         Task DeleteById(Guid id);
+
+        Task<List<Restaurant>> GetAllRestaurantsJoinedTags();
+
     }
 }

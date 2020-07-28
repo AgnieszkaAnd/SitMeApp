@@ -78,24 +78,22 @@
                         </div>
                     </div>
                 </div>
-            </div><!--/span-->
+            </div>
         </div>
 
 
 
         <div id="view-restaurants-cards" class="col-md">
             <div class="row">
-                <div class="card-deck mb-3 text-center col-md-2">
+                <div class="card-deck mb-3 text-center">
                     @foreach (var restaurant in Model) {
                         <div class="card mb-3 box-shadow">
                             <div class="card-body text-left light-purple">
                                 <img class="img-restaurant-list" src="~/images/restaurant_pictures/bar-1846137_1920.jpg" alt="Resto picture" />
                                 <h3>@restaurant.Name</h3>
-                                <p class="tag-details-purple-font">Indian | $$ | Casual, Date
-                                    @*@foreach (var tag in restaurant.Tags)
-                                    {   TODO after we have relations from DB mapped
-                                        // print, eg. Indian | $$ | Casual, Date
-                                    }*@
+                                <p class="tag-details-purple-font">
+                                    @foreach (var tag in restaurant.Tags)
+                                    { @tag.Name <span> | </span> }
                                 </p>
                                 <img class="float-left" height="25px" src="~/images/logos/location/imageedit_1_3379909790.png" alt="logoLocation">
                                 <p>@restaurant.City</p>
