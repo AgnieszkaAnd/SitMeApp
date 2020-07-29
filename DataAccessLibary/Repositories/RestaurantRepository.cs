@@ -23,12 +23,6 @@ namespace DataAccessLibary.Repositories {
             _database = database;
         }
 
-        // TODO: consider refactoring
-        // TODO: add class eg. Restaurant Repository : IRepository np.
-        // possible solution: take lists of objects from separate tables for
-        // Restaurant, Restaurant Tag, Tag i potem zmergowac je w kodzie
-        // RestaurantRepository : Repository - tam ma cruda, 
-        // RestaurantRepository - ma tą dodatkową metodę
         public async Task<List<Restaurant>> GetAllRestaurantsJoinedTags() {
             List<Restaurant> myResult = new List<Restaurant>();
 
