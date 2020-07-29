@@ -1,9 +1,9 @@
 v16/
 .vs/
-.vscode/
 
-bin/
 obj/
+bin/
 
-!README.md
-/*.zip
+# Database Project
+*.dbmdl
+*.jfm
