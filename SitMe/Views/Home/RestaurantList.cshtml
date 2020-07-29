@@ -1,0 +1,109 @@
+﻿
+@{
+    ViewData["Title"] = "SitMe";
+}
+@model List<Restaurant>
+
+<img class="tlo" src="~/images/restaurant_pictures/platter-2009590_1920.jpg" alt="tlo">
+
+<div id="search-restaurants" class="container-fluid">
+    <form class="form-inline d-flex justify-content-center md-form form-sm active-purple active-purple-2 mt-2">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <div class="input-group mb-4">
+            <input class="form-control form-control-sm " type="text" placeholder="nr of ppl"
+                   aria-label="Search">
+            <input class="form-control form-control-sm" type="text" placeholder="date"
+                   aria-label="Search">
+            <input class="form-control form-control-sm" type="text" placeholder="city"
+                   aria-label="Search">
+            <input type="submit" class="form-control form-control-sm" value="Find table">
+        </div>
+    </form>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div id="filter-restaurants" class="col-md-4">
+            <div class="sidebar-offcanvas" id="sidebar">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Price
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="list-group list-group-flush dropdown-toggle">
+                                <a href="#" class="list-group-item list-group-item-action ">$</a>
+                                <a href="#" class="list-group-item list-group-item-action  active">$$</a>
+                                <a href="#" class="list-group-item list-group-item-action ">$$$</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Cuisine
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action  active">Polish</a>
+                                <a href="#" class="list-group-item list-group-item-action ">Italian</a>
+                                <a href="#" class="list-group-item list-group-item-action ">Mexican</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Occasion
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                            <div class="list-group list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action  active">Date</a>
+                                <a href="#" class="list-group-item list-group-item-action ">Casual</a>
+                                <a href="#" class="list-group-item list-group-item-action ">Birthday</a>
+                                <a href="#" class="list-group-item list-group-item-action ">Party</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/span-->
+        </div>
+
+
+
+        <div id="view-restaurants-cards" class="col-md">
+            <div class="row">
+                <div class="card-deck mb-3 text-center col-md-2">
+                    @foreach (var restaurant in Model) {
+                        <div class="card mb-3 box-shadow">
+                            <div class="card-body text-left light-purple">
+                                <img class="img-restaurant-list" src="~/images/restaurant_pictures/bar-1846137_1920.jpg" alt="Resto picture" />
+                                <h3>@restaurant.Name</h3>
+                                <p class="tag-details-purple-font">Indian | $$ | Casual, Date
+                                    @*@foreach (var tag in restaurant.Tags)
+                                    {   TODO after we have relations from DB mapped
+                                        // print, eg. Indian | $$ | Casual, Date
+                                    }*@
+                                </p>
+                                <img class="float-left" height="25px" src="~/images/logos/location/imageedit_1_3379909790.png" alt="logoLocation">
+                                <p>@restaurant.City</p>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

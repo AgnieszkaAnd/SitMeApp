@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "Restaurant Profile";
+}
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+
+
+
+
+    <img class="tlo" src="~/images/restaurant_pictures/rest1.jpg"  alt="tlo">
+
+
+    <div class="row">
+        <div class="column left" style="background-color:rgb(255, 255, 255);">
+          <form class="form--box" action="/action_page.php">
+            <p style="font-family: Lao Muang Khong;font-style: normal;font-weight: bold;font-size: 24px;line-height: 28px;
+            ">Reservation Form</p>
+                <div>
+                  <label for="quantity">Quantity</label><br>
+                    <select id="quantity" name="quantity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                  <br>
+                  <div class="date-time">
+                    <label for="date">Date</label><label for="time">Time</label><br>
+                    <select id="date" name="date">
+                    <option value="1">1</option>
+                    <option value="2">2</option> 
+                    </select>
+                    <select id="time" name="time">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    </select>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="materialChecked2" checked>
+                    <label class="form-check-label" for="materialChecked2" style="font-size: small;">Show tables to share as well</label>
+                  </div>
+                  <br>
+                  <input type="find-table" value="Find Table">
+                  <br>
+                  <h3 style="font-size: 14px;">If you want to make a bigger reservation please choose option below</h3>
+                  <input type="special-reservation" value="Special reservation">
+          </form>
+        </div>
+
+
+        <div class="column middle" style="background-color:rgb(255, 255, 255);">
+          <div class="upper">
+              <h1>The Best Restaurant</h1>
+              <i class='fas fa-map-marker-alt' style='font-size:18px;'></i>
+              <h3>ul. Jana Kazimierza 12, Warszawa</h3>
+              <hr class="solid">
+          </div>
+          <div class="bottom">
+              <div class="left-inner">
+                  <ul>
+                      <li><a href="#home">About</a></li>
+                      <li><a href="#news">Menu</a></li>
+                      <li><a href="#contact">Photos</a></li>
+                  </ul>
+
+                  <br><br>
+                  <article class="rest-info">
+                      <p style="text-align: justify; text-justify: inter-word;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                          <br><br>
+                          Restaurant website:   <b>https://superrestauracja.pl</b></p>
+                  </article>
+
+                  <button class="button--tag">Tag 1</button>
+                  <button class="button--tag">Tag 2</button>
+                  <button class="button--tag">Tag 3</button>
+                  <button class="button--tag">Tag 4</button>
+
+                  <br><br><br>
+                  <img class="smallphoto" src="table1.jpg"  alt="small">
+
+                  <p>Some text..</p>
+              </div>
+              <div class="right-inner">
+                  <div class="column right" style="background-color:#ccc;">
+                        <h4>Good to know</h4>
+                        <h2>Open hours</h2>
+                        <p>1pm - 12am</p>
+                        <h2>Parking</h2>
+                        <p>No info</p>
+                  
+                      
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div class="main-content">ABC</div>  
+
+
+
