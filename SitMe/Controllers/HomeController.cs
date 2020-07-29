@@ -17,16 +17,20 @@ namespace SitMe.Controllers
         private readonly IRepository<User> _userRepository;
         private readonly IRepository<Restaurant> _restaurantRepository;
 
+        private readonly RestaurantRepository _restaurantRepositoryConcrete;
+
         public HomeController(  ILogger<HomeController> logger,
                                 IRepository<User> userRepository,
-                                IRepository<Restaurant> restaurantRepository)
+                                IRepository<Restaurant> restaurantRepository,
+                                RestaurantRepository restaurantRepositoryConcrete)
         {
             _logger = logger;
             _userRepository = userRepository;
             _restaurantRepository = restaurantRepository;
+            _restaurantRepositoryConcrete = restaurantRepositoryConcrete;
         }
 
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return View();
         }
@@ -37,12 +41,16 @@ namespace SitMe.Controllers
 
         public async Task<IActionResult> RestaurantList() {
             // many to many query
-            var restaurants = await _restaurantRepository.GetAllRestaurantsJoinedTags();
+            var restaurants = await _restaurantRepositoryConcrete.GetAllRestaurantsJoinedTags();
             return View(restaurants);
         }
 
 
         public IActionResult CreateReservation() {
+            return View();
+        }
+
+        public IActionResult UserProfile() {
             return View();
         }
 

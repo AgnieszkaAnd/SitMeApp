@@ -30,6 +30,9 @@ namespace SitMe
             services.AddControllersWithViews();
             services.AddScoped<ISqlDataAccess, SqlDataAccess>();
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
+            services.AddScoped<RestaurantRepository, RestaurantRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

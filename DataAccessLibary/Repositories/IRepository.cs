@@ -14,7 +14,7 @@ namespace DataAccessLibary.Repositories
         Task Update(T entity);
         Task DeleteById(Guid id);
 
-        Task<List<Restaurant>> GetAllRestaurantsJoinedTags();
+        //Task<List<Restaurant>> GetAllRestaurantsJoinedTags();
 
     }
 }
