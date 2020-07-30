@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DataAccessLibary
+namespace DataAccessLibrary
 {
     public interface ISqlDataAccess
     {

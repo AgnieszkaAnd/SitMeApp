@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataAccessLibary.Models
+namespace DataAccessLibrary.Models
 {
     public class Table
     {

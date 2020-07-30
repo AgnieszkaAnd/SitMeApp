@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
-using Dapper;
-using DataAccessLibary.Models;
-using Microsoft.Extensions.Configuration;
+using DataAccessLibrary.Models;
+using DataAccessLibrary.Repositories.Generic;
 
-namespace DataAccessLibary.Repositories {
-    public class RestaurantRepository : Repository<Restaurant> {
+
+namespace DataAccessLibrary.Repositories.RestaurantRepo {
+    public class RestaurantRepository : Repository<Restaurant>, IRestaurantRepository {
 
         private readonly ISqlDataAccess _database;
         private readonly string _tableName;
@@ -23,7 +19,7 @@ namespace DataAccessLibary.Repositories {
             _database = database;
         }
 
-        public async Task<List<Restaurant>> GetAllRestaurantsJoinedTags() {
+        public async Task<List<Restaurant>> GetRstaurantsWithTags() {
             List<Restaurant> myResult = new List<Restaurant>();
 
             var sql = @"select * from [Manager].[Restaurant] r 
@@ -36,9 +32,11 @@ namespace DataAccessLibary.Repositories {
             };
             var restaurants = await _database.LoadManyToManyData(sql, myMappingRestaurantTag, "Name", new { });
 
+            
             var result = restaurants.GroupBy(r => r.Name).Select(g =>
             {
                 var groupedRestaurant = g.First();
+                // TODO use dictionary local variable: key - tuple (restaurant, tag) - Dapper example
                 groupedRestaurant.Tags = g.Select(r => r.Tags.Single()).ToList();
                 return groupedRestaurant;
             });

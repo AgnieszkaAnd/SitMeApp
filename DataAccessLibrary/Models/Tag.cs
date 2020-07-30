@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAccessLibary.Models {
+namespace DataAccessLibrary.Models {
     public class Tag {
         public static readonly string TableName = "[Manager].[Tag]";
         public Guid Id { get; set; }

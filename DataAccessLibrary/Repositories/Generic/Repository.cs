@@ -6,10 +6,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Dapper;
-using DataAccessLibary.Models;
+using DataAccessLibrary.Repositories.Generic;
 using Microsoft.Extensions.Configuration;
+using DataAccessLibrary;
 
-namespace DataAccessLibary.Repositories
+
+namespace DataAccessLibrary.Repositories.Generic
 {
     // TODO change T to eg. IDataTable - with eg. property TableName
     // so we can know more about the class
