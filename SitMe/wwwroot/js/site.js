@@ -17,11 +17,35 @@ filterGroup.forEach(function (item) {
                 this.classList.remove('active');
             } else {
                 this.classList.add('active');
+                //let filter = 'onclick = "FilterRestaurantsBy("' + this.innerHTML.toLowerCase().toString() + '")';
+                ////this.classList.add(@'onclick = "FilterRestaurantsBy(\'{filter}\')');
+                //this.classList.add(filter);
+
+                //let prefix = 'onclick = "location.href=\'@Url.Action(\"FilterRestaurantsBy(\'';
+                //let suffix = '\')", "Home")';
+                //let filter = prefix + this.innerHTML.toLowerCase().toString() + suffix;
+                let filter = this.innerHTML.toLowerCase().toString();
+                $.ajax({
+                    type: "GET",
+                    url: "/Home/RestaurantListFilter/",
+                    data: {
+                        filterBy: filter
+                    },
+                    success: function (result) {
+                        //alert(result);
+                        var $detailDiv = $('#filteredRestaurants'),
+                            url = $(this).data('url');
+
+                        $.get(url, function (data) {
+                            $detailDiv.replaceWith(result);
+                        });
+                    }
+                });
             }
         })
     })
-
 });
+
 
 //let filters = document.getElementsByClassName('card');
 

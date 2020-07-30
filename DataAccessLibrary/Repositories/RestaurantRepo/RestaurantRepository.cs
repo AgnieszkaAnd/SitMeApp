@@ -19,7 +19,7 @@ namespace DataAccessLibrary.Repositories.RestaurantRepo {
             _database = database;
         }
 
-        public async Task<List<Restaurant>> GetRstaurantsWithTags() {
+        public async Task<List<Restaurant>> GetRetaurantsWithTags() {
             List<Restaurant> myResult = new List<Restaurant>();
 
             var sql = @"select * from [Manager].[Restaurant] r 
@@ -35,6 +35,33 @@ namespace DataAccessLibrary.Repositories.RestaurantRepo {
             
             var result = restaurants.GroupBy(r => r.Name).Select(g =>
             {
+                var groupedRestaurant = g.First();
+                // TODO use dictionary local variable: key - tuple (restaurant, tag) - Dapper example
+                groupedRestaurant.Tags = g.Select(r => r.Tags.Single()).ToList();
+                return groupedRestaurant;
+            });
+
+            foreach (var restaurant in result) {
+                myResult.Add(restaurant);
+            }
+            return myResult;
+        }
+
+        public async Task<List<Restaurant>> GetRetaurantsWithTags(string filterBy) {
+            List<Restaurant> myResult = new List<Restaurant>();
+
+            var sql = @"select * from [Manager].[Restaurant] r 
+                inner join [Manager].[RestaurantTag] rt on rt.RestaurantId = r.Id
+                inner join [Manager].[Tag] t on t.Id = rt.TagId
+                where t.Name = '" + filterBy + "'";
+            Func<Restaurant, Tag, Restaurant> myMappingRestaurantTag = (restaurant, tag) => {
+                restaurant.Tags.Add(tag);
+                return restaurant;
+            };
+            var restaurants = await _database.LoadManyToManyData(sql, myMappingRestaurantTag, "Name", new { });
+
+
+            var result = restaurants.GroupBy(r => r.Name).Select(g => {
                 var groupedRestaurant = g.First();
                 // TODO use dictionary local variable: key - tuple (restaurant, tag) - Dapper example
                 groupedRestaurant.Tags = g.Select(r => r.Tags.Single()).ToList();
