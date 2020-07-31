@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - SitMe</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/restaurantprofile.css">
+    <link rel="stylesheet" href="~/css/indexcss.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Krub&display=swap" rel="stylesheet">
 
@@ -54,10 +55,10 @@
             </nav>*@
 
     <nav class="nav">
-        <a class="nav-item" href="#">About SitMe</a>
-        <a class="nav-item" href="#"><img class="nav-item logo" src="~/images/logos/location/logotest1.png" alt="logo"></a>
+        <a class="nav-item" asp-controller="Home" asp-action="Index">About SitMe</a>
+        <a class="nav-item" asp-controller="Home" asp-action="Index"><img class="nav-item logo" src="~/images/logos/location/logotest1.png" alt="logo"></a>
         @*<img class="nav-item logo" src="~/images/logos/location/logotest1.png" alt="logo">*@
-        <a class="nav-item" href="#">Register</a>
+        <a class="nav-item" asp-controller="Home" asp-action="Register">Register</a>
         <a class="nav-item" href="#">Log in</a>
     </nav>
 </header>
