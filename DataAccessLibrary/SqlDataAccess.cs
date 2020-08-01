@@ -9,7 +9,7 @@ using System.Xml.Linq;
 using Dapper;
 using Microsoft.Extensions.Configuration;
 
-namespace DataAccessLibary
+namespace DataAccessLibrary
 {
     public class SqlDataAccess : ISqlDataAccess
     {

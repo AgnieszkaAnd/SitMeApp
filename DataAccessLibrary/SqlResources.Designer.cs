@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DataAccessLibary {
+namespace DataAccessLibrary {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace DataAccessLibary {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DataAccessLibary.SqlResources", typeof(SqlResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DataAccessLibrary.SqlResources", typeof(SqlResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

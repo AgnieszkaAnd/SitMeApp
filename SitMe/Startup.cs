@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DataAccessLibary;
-using DataAccessLibary.Models;
-using DataAccessLibary.Repositories;
+using DataAccessLibrary;
+using DataAccessLibrary.Models;
+using DataAccessLibrary.Repositories;
+using DataAccessLibrary.Repositories.Generic;
+using DataAccessLibrary.Repositories.RestaurantRepo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,9 +31,9 @@ namespace SitMe
         {
             services.AddControllersWithViews();
             services.AddScoped<ISqlDataAccess, SqlDataAccess>();
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
-            services.AddScoped<RestaurantRepository, RestaurantRepository>();
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<IRestaurantRepository, RestaurantRepository>();
 
         }
 

@@ -1,33 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using System.Threading.Tasks;
-using DataAccessLibary.Models;
-using DataAccessLibary.Repositories;
+using DataAccessLibrary.Models;
+using DataAccessLibrary.Repositories.Generic;
+using DataAccessLibrary.Repositories.RestaurantRepo;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SitMe.Models;
 
-namespace SitMe.Controllers
-{
+namespace SitMe.Controllers {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IRepository<User> _userRepository;
-        private readonly IRepository<Restaurant> _restaurantRepository;
-
-        private readonly RestaurantRepository _restaurantRepositoryConcrete;
+        private readonly IRestaurantRepository _restaurantRepository;
 
         public HomeController(  ILogger<HomeController> logger,
                                 IRepository<User> userRepository,
-                                IRepository<Restaurant> restaurantRepository,
-                                RestaurantRepository restaurantRepositoryConcrete)
+                                IRestaurantRepository restaurantRepository)
         {
             _logger = logger;
             _userRepository = userRepository;
             _restaurantRepository = restaurantRepository;
-            _restaurantRepositoryConcrete = restaurantRepositoryConcrete;
         }
 
         public IActionResult Index()
@@ -41,8 +34,16 @@ namespace SitMe.Controllers
 
         public async Task<IActionResult> RestaurantList() {
             // many to many query
-            var restaurants = await _restaurantRepositoryConcrete.GetAllRestaurantsJoinedTags();
+            //var restaurants = await _restaurantRepository.GetRetaurantsWithTags("polish");
+            var restaurants = await _restaurantRepository.GetRetaurantsWithTags();
+
             return View(restaurants);
+        }
+
+        public async Task<IActionResult> RestaurantListFilter(string filterBy) {
+            var restaurants = await _restaurantRepository.GetRetaurantsWithTags(filterBy);
+            return PartialView("_RestaurantsList", restaurants);
+            //return View(restaurants);
         }
 
 
