@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Home\Register.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DataAccessLibary\DataAccessLibary.csproj" />
-    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 
