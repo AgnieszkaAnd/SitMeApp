@@ -2,16 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using DataAccessLibrary.Repositories.Generic;
 
 namespace DataAccessLibrary.Repositories.RestaurantRepo {
-    public interface IRestaurantRepository
+    public interface IRestaurantRepository : IRepository<Restaurant>
     {
-        Task<List<Restaurant>> GetAll();
-        Task<Restaurant> GetById(Guid id);
-        Task Insert(Restaurant entity);
-        Task Update(Restaurant entity);
-        Task DeleteById(Guid id);
         Task<List<Restaurant>> GetRetaurantsWithTags();
-        Task<List<Restaurant>> GetRetaurantsWithTags(string filterBy);
+        Task<List<Restaurant>> GetRetaurantsWithTags(string filters);
     }
 }

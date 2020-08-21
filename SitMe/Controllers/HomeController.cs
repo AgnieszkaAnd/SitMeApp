@@ -40,8 +40,8 @@ namespace SitMe.Controllers {
             return View(restaurants);
         }
 
-        public async Task<IActionResult> RestaurantListFilter(string filterBy) {
-            var restaurants = await _restaurantRepository.GetRetaurantsWithTags(filterBy);
+        public async Task<IActionResult> RestaurantListFilter(string filterByTest) {
+            var restaurants = await _restaurantRepository.GetRetaurantsWithTags(filterByTest);
             return PartialView("_RestaurantsList", restaurants);
             //return View(restaurants);
         }

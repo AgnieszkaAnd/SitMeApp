@@ -5,51 +5,57 @@
 
 let filterBox = document.getElementById('accordionExample');
 let filterGroup = Array.from(filterBox.children);
+let filters;
+
+let filtersArray;
 
 filterGroup.forEach(function (item) {
-    console.log(item);
-    //Array.from(item.childNodes);
+    
+    filters = new Set();
 
     let subFilters = Array.from(item.querySelectorAll('a'));
     subFilters.forEach(function(filterSelector) {
         filterSelector.addEventListener('click', function() {
             if (this.classList.contains('active')) {
                 this.classList.remove('active');
+                filters.delete(this.innerHTML.toLowerCase().toString());
+
+                //debug
+                console.log(this.innerHTML.toLowerCase().toString() + ' removed'); 
+
             } else {
                 this.classList.add('active');
-                //let filter = 'onclick = "FilterRestaurantsBy("' + this.innerHTML.toLowerCase().toString() + '")';
-                ////this.classList.add(@'onclick = "FilterRestaurantsBy(\'{filter}\')');
-                //this.classList.add(filter);
+                filters.add(this.innerHTML.toLowerCase().toString());
 
-                //let prefix = 'onclick = "location.href=\'@Url.Action(\"FilterRestaurantsBy(\'';
-                //let suffix = '\')", "Home")';
-                //let filter = prefix + this.innerHTML.toLowerCase().toString() + suffix;
-                let filter = this.innerHTML.toLowerCase().toString();
-                $.ajax({
-                    type: "GET",
-                    url: "/Home/RestaurantListFilter/",
-                    data: {
-                        filterBy: filter
-                    },
-                    success: function (result) {
-                        //alert(result);
-                        var $detailDiv = $('#filteredRestaurants'),
-                            url = $(this).data('url');
-
-                        $.get(url, function (data) {
-                            $detailDiv.replaceWith(result);
-                        });
-                    }
-                });
+                //debug
+                console.log(this.innerHTML.toLowerCase().toString() + ' added'); 
             }
+
+            //debug
+            console.log('filters: ' + filters.toString());
+            filters.forEach(function(item) {
+                console.log(item);
+            });
+
+            filterString = Array.from(filters).toString();
+            console.log(filterString)
+
+            $.ajax({
+                type: "GET",
+                url: "/Home/RestaurantListFilter",
+                data: { filterByTest: filterString },
+                success: function (result) {
+                    alert(result);
+                    var detailDiv = $('#filteredRestaurants');//,
+                    detailDiv.html(result);
+                }
+            });
+
         })
     })
 });
 
-
-//let filters = document.getElementsByClassName('card');
-
-//let accordeonButtons = document.getElementsByClassName('list-group-item');
+// ----------------------------------------------------------
 
 const myAccount = document.querySelector('#my-account');
 const myAccountHTML = `
