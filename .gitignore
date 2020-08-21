@@ -7,3 +7,6 @@ obj/
 
 !README.md
 /*.zip
+# Database Project
+*.dbmdl
+*.jfm
