@@ -1,0 +1,122 @@
+﻿body {
+    background: #ECDFF9;
+}
+
+.logo_img {
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search_box {
+    position: relative;
+    z-index: 1;
+    margin: auto;
+    margin-top: -100px;
+    padding: 20px 25px;
+    text-align: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Lao Muang Khong;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    color: #000000;
+    width: 90%;
+}
+
+.search_box h1 {
+    color: #000000;
+    font-family: Lao Muang Khong;
+}
+
+input[type=button] {
+    background-color: #CCACEB;
+    border: none;
+    color: white;
+    font-family: Krub;
+    font-style: normal;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+input[type=submit] {
+    background-color: #8D55C6;
+    border: none;
+    color: white;
+    font-family: Krub;
+    font-style: normal;
+    font-size: 18px;
+    padding: 5px 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+input[type=number], input[type=date], input[type=search], input[type=text], input[type=password] {
+    background: #EDEDED;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    padding: 5px 10px;
+    font-family: Krub;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 23px;
+    color: #5A5A5A;
+}
+
+
+.btn-floating {
+    color: #8D55C6;
+}
+
+.btn-carousel {
+    background-color: #CCACEB;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.card-title {
+    color: #8D55C6;
+}
+
+.card-body a:link, .card-body a:visited {
+    color: white;
+}
+
+.card-body a:hover, .card-body a:active {
+    color: #8D55C6;
+}
+
+.login_box {
+    position: relative;
+    z-index: 1;
+    margin: auto;
+    margin-top: -460px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 12px;
+    text-align: center;
+    color: #8D55C6;
+    font-family: Krub;
+    padding: 20px 25px;
+    width: 40%;
+}
+
+h2 {
+    margin: 0 0 20px 0;
+    font-weight: 300;
+    font-size: 28px;
+}
+
+
