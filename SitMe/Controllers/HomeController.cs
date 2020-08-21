@@ -35,7 +35,7 @@ namespace SitMe.Controllers {
         public async Task<IActionResult> RestaurantList() {
             // many to many query
             //var restaurants = await _restaurantRepository.GetRetaurantsWithTags("polish");
-            var restaurants = await _restaurantRepository.GetRetaurantsWithTags();
+            var restaurants = await _restaurantRepository.GetRetaurantsWithTags(0, 9);
 
             return View(restaurants);
         }

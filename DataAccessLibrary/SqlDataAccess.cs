@@ -44,7 +44,7 @@ namespace DataAccessLibrary
         public async Task<IEnumerable<T1>> LoadManyToManyData<T1, T2, TP>(string sqlQuery, Func<T1, T2, T1> function, string splitOn, TP parameters) {
             var connectionString = _configuration.GetConnectionString(ConnectionStringName);
             using (var connection = new SqlConnection(connectionString)) {
-                var data = await connection.QueryAsync<T1, T2, T1>(sqlQuery, function, new{}, splitOn: splitOn);
+                var data = await connection.QueryAsync<T1, T2, T1>(sqlQuery, function, new{ Offset = 0, Limit = 9 }, splitOn: splitOn);
                 return data.ToList();
             }
         }

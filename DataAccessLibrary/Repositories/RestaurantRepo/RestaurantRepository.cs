@@ -21,19 +21,26 @@ namespace DataAccessLibrary.Repositories.RestaurantRepo {
         }
 
         //TODO add 2 parameters for pagination
-        public async Task<List<Restaurant>> GetRetaurantsWithTags() //int pageNb, int pageSize) { // skip i top
+        public async Task<List<Restaurant>> GetRetaurantsWithTags(int pageNb = 0, int pageSize = 9) //int pageNb, int pageSize) { // skip i top
         {
             List<Restaurant> myResult = new List<Restaurant>();
 
+            var parameters = new Dapper.DynamicParameters();
+            parameters.Add("@Limit", pageSize);
+            parameters.Add("@Offset", pageNb * pageSize);
+            //var limit = pageSize;
+            //var offset = pageNb * pageSize;
+
             var sql = @"select * from [Manager].[Restaurant] r 
                 inner join [Manager].[RestaurantTag] rt on rt.RestaurantId = r.Id
-                inner join [Manager].[Tag] t on t.Id = rt.TagId";
+                inner join [Manager].[Tag] t on t.Id = rt.TagId
+                Order By r.Name ASC Offset @Offset ROWS Fetch next @Limit rows only";
             Func<Restaurant, Tag, Restaurant> myMappingRestaurantTag = (restaurant, tag) =>
             {
                 restaurant.Tags.Add(tag);
                 return restaurant;
             };
-            var restaurants = await _database.LoadManyToManyData(sql, myMappingRestaurantTag, "Name", new { });
+            var restaurants = await _database.LoadManyToManyData(sql, myMappingRestaurantTag, "Name", new { Offset=0, Limit=9 });
 
             // TODO put grouping in sql query if possible
             var result = restaurants.GroupBy(r => r.Name).Select(g =>

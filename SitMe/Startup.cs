@@ -10,7 +10,8 @@ using DataAccessLibrary.Repositories.RestaurantRepo;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
-//using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
+using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
+using Microsoft.VisualStudio.Web.BrowserLink;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -35,6 +36,7 @@ namespace SitMe
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IRestaurantRepository, RestaurantRepository>();
 
+            services.AddRazorPages().AddRazorRuntimeCompilation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +45,7 @@ namespace SitMe
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-               // app.UseBrowserLink();
+                app.UseBrowserLink();
             }
             else
             {

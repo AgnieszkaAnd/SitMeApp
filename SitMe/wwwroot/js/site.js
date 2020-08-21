@@ -21,18 +21,18 @@ filterGroup.forEach(function (item) {
                 filters.delete(this.innerHTML.toLowerCase().toString());
 
                 //debug
-                console.log(this.innerHTML.toLowerCase().toString() + ' removed'); 
+                //console.log(this.innerHTML.toLowerCase().toString() + ' removed'); 
 
             } else {
                 this.classList.add('active');
                 filters.add(this.innerHTML.toLowerCase().toString());
 
                 //debug
-                console.log(this.innerHTML.toLowerCase().toString() + ' added'); 
+                //console.log(this.innerHTML.toLowerCase().toString() + ' added'); 
             }
 
             //debug
-            console.log('filters: ' + filters.toString());
+            //console.log('filters: ' + filters.toString());
             filters.forEach(function(item) {
                 console.log(item);
             });
@@ -45,7 +45,8 @@ filterGroup.forEach(function (item) {
                 url: "/Home/RestaurantListFilter",
                 data: { filterByTest: filterString },
                 success: function (result) {
-                    alert(result);
+                    //debug
+                    //alert(result);
                     var detailDiv = $('#filteredRestaurants');//,
                     detailDiv.html(result);
                 }

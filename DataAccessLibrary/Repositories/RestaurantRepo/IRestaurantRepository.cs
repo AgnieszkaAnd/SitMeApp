@@ -7,7 +7,7 @@ using DataAccessLibrary.Repositories.Generic;
 namespace DataAccessLibrary.Repositories.RestaurantRepo {
     public interface IRestaurantRepository : IRepository<Restaurant>
     {
-        Task<List<Restaurant>> GetRetaurantsWithTags();
+        Task<List<Restaurant>> GetRetaurantsWithTags(int pageNb, int pageSize);
         Task<List<Restaurant>> GetRetaurantsWithTags(string filters);
     }
 }
