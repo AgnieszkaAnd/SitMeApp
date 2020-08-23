@@ -14,14 +14,15 @@ namespace DataAccessLibrary.Repositories.RestaurantRepo {
         private readonly string _tableName;
         private readonly List<string> _properties;
 
-        public RestaurantRepository(ISqlDataAccess database) : base(database)
+        public RestaurantRepository(ISqlDataAccess database)
+            : base(database)
         {
             _tableName = Restaurant.TableName;
-            _database = database;
+            _database = database ?? throw new ArgumentNullException(nameof(database));
         }
 
         //TODO add 2 parameters for pagination
-        public async Task<List<Restaurant>> GetRetaurantsWithTags(int pageNb = 0, int pageSize = 9) //int pageNb, int pageSize) { // skip i top
+        public async Task<List<Restaurant>> GetRetaurantsWithTagsAsync(int pageNb = 0, int pageSize = 9) //int pageNb, int pageSize) { // skip i top
         {
             List<Restaurant> myResult = new List<Restaurant>();
 
@@ -60,7 +61,7 @@ namespace DataAccessLibrary.Repositories.RestaurantRepo {
         //TODO change List to IEnumerable
         //TODO mozna wyciągnąć najpierw restauracje a potem dla nich n query po tagi (problem n+1)
         //1 query na początku select * a potem  n queries
-        public async Task<List<Restaurant>> GetRetaurantsWithTags(string filters) {
+        public async Task<List<Restaurant>> GetRetaurantsWithTagsAsync(string filters) {
             //List<Restaurant> myResult = new List<Restaurant>();
 
 

@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using DataAccessLibrary.Models;
+using DataAccessLibrary.Base;
 
 namespace DataAccessLibrary.Repositories.Generic
 {
-    public interface IRepository<T> where T : class, new()
+    public interface IRepository<T>
+        where T : Domain
     {
-        Task<List<T>> GetAll();
-        Task<T> GetById(Guid id);
-        Task Insert(T entity);
-        Task Update(T entity);
-        Task DeleteById(Guid id);
+        Task<List<T>> GetAllAsync();
+        
+        Task<T> GetByIdAsync(Guid id);
+        
+        Task InsertAsync(T entity);
+        
+        Task UpdateAsync(T entity);
+        
+        Task DeleteByIdAsync(Guid id);
     }
 }
