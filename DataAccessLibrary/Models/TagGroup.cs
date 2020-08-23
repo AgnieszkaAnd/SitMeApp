@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using DataAccessLibrary.Base;
 
-namespace DataAccessLibrary.Models {
-    public class TagGroup {
-        public static readonly string TableName = "[Manager].[TagGroup]";
-        public Guid Id { get; set; }
+namespace DataAccessLibrary.Models
+{
+    public class TagGroup : Domain 
+    {
+        public static string TableName = "[Manager].[TagGroup]";
+        
         public string Name { get; set; }
+        
         public List<Tag> Tags { get; set; }
     }
 }

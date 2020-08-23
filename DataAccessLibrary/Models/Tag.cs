@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using DataAccessLibrary.Base;
 
-namespace DataAccessLibrary.Models {
-    public class Tag {
-        public static readonly string TableName = "[Manager].[Tag]";
-        public Guid Id { get; set; }
+namespace DataAccessLibrary.Models 
+{
+    public class Tag : Domain
+    {
+        public static string TableName = "[Manager].[Tag]";
+        
         public string Name { get; set; }
+        
         public Guid TagGroupId { get; set; }
-        public List<Restaurant> Restaurants { get; set; } = new List<Restaurant>();
+        
+        public List<Restaurant> Restaurants { get; set; }
     }
 }
