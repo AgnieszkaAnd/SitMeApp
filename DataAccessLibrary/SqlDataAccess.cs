@@ -42,7 +42,7 @@ namespace DataAccessLibrary
             await using var connection = new SqlConnection(connectionString);
             var data = await connection.QueryAsync<T1, T2, T1>(sqlQuery, function, new{ Offset = 0, Limit = 9 }, splitOn: splitOn);
             
-            return data.ToList();
+            return data;
         }
 
     }
