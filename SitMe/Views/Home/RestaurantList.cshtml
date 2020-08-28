@@ -39,7 +39,7 @@
                         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                             <div class="list-group list-group-flush dropdown-toggle">
                                 <a href="#" class="list-group-item list-group-item-action ">$</a>
-                                <a href="#" class="list-group-item list-group-item-action  active">$$</a>
+                                <a href="#" class="list-group-item list-group-item-action ">$$</a>
                                 <a href="#" class="list-group-item list-group-item-action ">$$$</a>
                             </div>
                         </div>
@@ -54,9 +54,11 @@
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                             <div class="list-group list-group-flush">
-                                <a href="#" class="list-group-item list-group-item-action  active">Polish</a>
+                                <a href="#" class="list-group-item list-group-item-action ">Polish</a>
                                 <a href="#" class="list-group-item list-group-item-action ">Italian</a>
                                 <a href="#" class="list-group-item list-group-item-action ">Mexican</a>
+                                <a href="#" class="list-group-item list-group-item-action ">Middle East</a>
+                                <a href="#" class="list-group-item list-group-item-action ">Kebab</a>
                             </div>
                         </div>
                     </div>
@@ -70,7 +72,7 @@
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                             <div class="list-group list-group-flush">
-                                <a href="#" class="list-group-item list-group-item-action  active">Date</a>
+                                <a href="#" class="list-group-item list-group-item-action ">Date</a>
                                 <a href="#" class="list-group-item list-group-item-action ">Casual</a>
                                 <a href="#" class="list-group-item list-group-item-action ">Birthday</a>
                                 <a href="#" class="list-group-item list-group-item-action ">Party</a>
@@ -82,26 +84,9 @@
         </div>
 
 
-
-        <div id="view-restaurants-cards" class="col-md">
-            <div class="row">
-                <div class="card-deck mb-3 text-center">
-                    @foreach (var restaurant in Model) {
-                        <div class="card mb-3 box-shadow">
-                            <div class="card-body text-left light-purple">
-                                <img class="img-restaurant-list" src="~/images/restaurant_pictures/bar-1846137_1920.jpg" alt="Resto picture" />
-                                <h3>@restaurant.Name</h3>
-                                <p class="tag-details-purple-font">
-                                    @foreach (var tag in restaurant.Tags)
-                                    { @tag.Name <span> | </span> }
-                                </p>
-                                <img class="float-left" height="25px" src="~/images/logos/location/imageedit_1_3379909790.png" alt="logoLocation">
-                                <p>@restaurant.City</p>
-                            </div>
-                        </div>
-                    }
-                </div>
-            </div>
-        </div>
+    <div id="filteredRestaurants" class="col-md-8">
+        @{ Html.RenderPartial("_RestaurantsList"); }
+    </div>
+        
     </div>
 </div>

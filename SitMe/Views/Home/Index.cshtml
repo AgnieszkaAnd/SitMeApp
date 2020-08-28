@@ -2,6 +2,163 @@
     ViewData["Title"] = "Sitme Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+
+
+<div class="logo_img">
+    <img class="tlo" src="~/images/restaurant_pictures/main_menu.png" />
+</div>
+
+
+<div class="search_box">
+    <br>
+    <h1>Let me sit you down in the best place!</h1>
+
+    <br>
+    <form asp-controller="Home" asp-action="RestaurantList" method="post">
+        <input type="number" id="quantity" name="quantity" min="1" max="9" placeholder="Nr of ppl">
+        <input type="date" id="res_date" name="res_date" placeholder="Date">
+        <input type="search" id="gsearch" name="gsearch" placeholder="City, Restaurant name" size=50>
+        <input type="submit" value="Find table">
+        <br>
+
+        <input type="button" value="Pet friendly">
+        <input type="button" value="No kids">
+        <input type="button" value="Vegan">
+        <input type="button" value="Vegetarian">
+    </form>
+    <br><br>
+</div>
+
+<div class="container my-4">
+
+    <p class="font-weight-bold">
+        Most popular restaurants in your {city}:
+    </p>
+
+
+    <!--Carousel Wrapper-->
+    <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+        <!--Controls-->
+        <div class="controls-top">
+            <a class="btn-floating" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+            <a class="btn-floating" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+        </div>
+        <!--/.Controls-->
+        <!--Indicators-->
+        <ol class="carousel-indicators">
+            <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+            <li data-target="#multi-item-example" data-slide-to="1"></li>
+            <li data-target="#multi-item-example" data-slide-to="2"></li>
+        </ol>
+        <!--/.Indicators-->
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+
+            <!--First slide-->
+            <div class="carousel-item active">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="~/images/restaurant_pictures/restaurant-449952_1920.jpg"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Restaurant name</h4>
+                                <p class="card-text">
+                                    (Details about this restaurant)
+                                </p>
+                                <a class="btn-carousel" asp-controller="Home" asp-action="RestaurantProfile">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 clearfix d-none d-md-block">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="~/images/restaurant_pictures/restaurant-690975_1920.jpg"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Restaurant name</h4>
+                                <p class="card-text">
+                                    (Details about this restaurant)
+                                </p>
+                                <a class="btn-carousel" asp-controller="Home" asp-action="RestaurantProfile">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 clearfix d-none d-md-block">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="~/images/restaurant_pictures/restaurant-690975_1920.jpg"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Restaurant name</h4>
+                                <p class="card-text">
+                                    (Details about this restaurant)
+                                </p>
+                                <a class="btn-carousel" asp-controller="Home" asp-action="RestaurantProfile">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--/.First slide-->
+            <!--Second slide-->
+            <div class="carousel-item">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="~/images/restaurant_pictures/restaurant-449952_1920.jpg"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Restaurant name</h4>
+                                <p class="card-text">
+                                    (Details about this restaurant)
+                                </p>
+                                <a class="btn-carousel" asp-controller="Home" asp-action="RestaurantProfile">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 clearfix d-none d-md-block">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="~/images/restaurant_pictures/restaurant-690975_1920.jpg"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Restaurant name</h4>
+                                <p class="card-text">
+                                    (Details about this restaurant)
+                                </p>
+                                <a class="btn-carousel" asp-controller="Home" asp-action="RestaurantProfile">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 clearfix d-none d-md-block">
+                        <div class="card mb-2">
+                            <img class="card-img-top" src="~/images/restaurant_pictures/restaurant-449952_1920.jpg"
+                                 alt="Card image cap">
+                            <div class="card-body">
+                                <h4 class="card-title">Restaurant name</h4>
+                                <p class="card-text">
+                                    (Details about this restaurant)
+                                </p>
+                                <a class="btn-carousel" asp-controller="Home" asp-action="RestaurantProfile">Find out more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!--/.Second slide-->
+           
+        </div>
+        <!--/.Slides-->
+
+    </div>
+    <!--/.Carousel Wrapper-->
+
+
 </div>

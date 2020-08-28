@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DataAccessLibary.Models
+namespace DataAccessLibrary.Models
 {
     public class Reservation
     {

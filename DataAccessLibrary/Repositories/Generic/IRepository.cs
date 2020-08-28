@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DataAccessLibary.Models;
+using DataAccessLibrary.Models;
 
-namespace DataAccessLibary.Repositories
+namespace DataAccessLibrary.Repositories.Generic
 {
     public interface IRepository<T> where T : class, new()
     {
@@ -13,8 +13,5 @@ namespace DataAccessLibary.Repositories
         Task Insert(T entity);
         Task Update(T entity);
         Task DeleteById(Guid id);
-
-        Task<List<Restaurant>> GetAllRestaurantsJoinedTags();
-
     }
 }

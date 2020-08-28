@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SitMe", "SitMe\SitMe.csproj", "{3FC6BFEF-3F1F-4424-9297-139B4601B936}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLibary", "DataAccessLibary\DataAccessLibary.csproj", "{B48EE95C-27E3-4835-A64C-642FF153946A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccessLibrary", "DataAccessLibrary\DataAccessLibrary.csproj", "{B48EE95C-27E3-4835-A64C-642FF153946A}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SitMeDatabase", "SitMeDatabase\SitMeDatabase.sqlproj", "{CDA64EE7-E13D-459F-ADFF-571289EF3E23}"
 EndProject
