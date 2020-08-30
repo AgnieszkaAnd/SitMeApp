@@ -6,6 +6,8 @@ namespace DataAccessLibrary
 {
     public interface ISqlDataAccess
     {
+        string ConnectionString { get; }
+        bool ConnectionAvailable { get; }
         Task<List<T>> LoadData<T, TP>(string sqlQuery, TP parameters);
         Task SaveData<T>(string sqlQuery, T parameters);
 

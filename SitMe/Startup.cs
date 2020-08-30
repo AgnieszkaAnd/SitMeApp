@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Threading.Tasks;
 using DataAccessLibrary;
@@ -11,10 +13,12 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation;
+using Microsoft.Data.SqlClient;
 using Microsoft.VisualStudio.Web.BrowserLink;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 
 namespace SitMe
 {
@@ -32,7 +36,8 @@ namespace SitMe
         {
             services.AddControllersWithViews();
             services.AddScoped<ISqlDataAccess, SqlDataAccess>();
-
+            services.AddScoped<IDbConnection, SqlConnection>();
+            
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IRestaurantRepository, RestaurantRepository>();
 

@@ -1,8 +1,4 @@
 USE [SitMeScriptCreated]
-CREATE SCHEMA [Admin]
-CREATE SCHEMA [Client]
-CREATE SCHEMA [Manager]
-
 
 -- USER ROLE - definition of some kind of 'access groups'
 IF (NOT EXISTS (SELECT * 
@@ -99,7 +95,7 @@ IF (NOT EXISTS (SELECT *
                  FROM INFORMATION_SCHEMA.TABLES 
                  WHERE TABLE_SCHEMA = 'Manager' 
                  AND  TABLE_NAME = 'Table'))
-CREATE TABLE [Manager].[Table2] (
+CREATE TABLE [Manager].[Table] (
 [Id] uniqueidentifier PRIMARY KEY DEFAULT NEWID(),
 [Name] nvarchar(50),
 [TableTypeId] uniqueidentifier NOT NULL
