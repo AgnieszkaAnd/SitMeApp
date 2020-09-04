@@ -14,8 +14,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.SqlServer;
-using Microsoft.Data.Sqlite;
-using System.Data.SqlClient;
 
 
 namespace SitMe
