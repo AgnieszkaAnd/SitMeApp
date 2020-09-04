@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using DataAccessLibrary.Base;
 
 namespace DataAccessLibrary.Models
 {
-    public class Tag
+    public class Tag : Domain
     {
         public static string TableName = "[Manager].[Tag]";
 

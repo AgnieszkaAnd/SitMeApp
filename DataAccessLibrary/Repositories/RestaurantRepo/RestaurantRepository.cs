@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataAccessLibrary.Base;
 using DataAccessLibrary.Models;
 using DataAccessLibrary.Repositories.Generic;
 
@@ -11,8 +12,8 @@ namespace DataAccessLibrary.Repositories.RestaurantRepo {
     public class RestaurantRepository : Repository<Restaurant>, IRestaurantRepository {
 
         private readonly ISqlDataAccess _database;
+
         private readonly string _tableName;
-        private readonly List<string> _properties;
 
         public RestaurantRepository(ISqlDataAccess database)
             : base(database)

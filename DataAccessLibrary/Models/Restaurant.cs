@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using DataAccessLibrary.Base;
 
 namespace DataAccessLibrary.Models
 {
-    public class Restaurant
+    public class Restaurant : Domain
     {
         public static string TableName = "[Manager].[Restaurant]";
 
