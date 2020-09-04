@@ -1,19 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
+using DataAccessLibrary.Base;
 
 namespace DataAccessLibrary.Models
 {
-    public class Table
+    public class Table : Domain
     {
-        public static readonly string TableName = "[Manager].[Table]";
-        public Guid Id { get; set; }
+        public static string TableName = "[Manager].[Table]";
+        
         public string Name { get; set; }
-        public Guid TableTypeId { get; set; }
-        public byte MaxNbOfSeats { get; set; }
-        public byte[] Picture { get; set; }
-        public string LocationInRestaurant { get; set; }
-        public bool IsVisibleForUsers { get; set; }
-        public Guid RestaurantId { get; set; }
 
+        public Guid TableTypeId { get; set; }
+        
+        public byte MaxNbOfSeats { get; set; }
+        
+        public byte[] Picture { get; set; }
+        
+        public string LocationInRestaurant { get; set; }
+        
+        public bool IsVisibleForUsers { get; set; }
+        
+        public Guid RestaurantId { get; set; }
     }
 }

@@ -13,13 +13,11 @@
     <PackageReference Include="Font.Awesome" Version="5.13.0" />
     <PackageReference Include="Font.Awesome.Less" Version="5.13.0" />
     <PackageReference Include="Font.Awesome.Sass" Version="5.13.0" />
-    <PackageReference Include="FontAwesomeIcons" Version="1.0.3">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="FontAwesomeIconsDropdown" Version="1.4.0" />
     <PackageReference Include="FontAwesomeToolkit" Version="4.7.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
     <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
     <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="18.2.0.46" />
   </ItemGroup>

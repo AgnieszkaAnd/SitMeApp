@@ -20,7 +20,7 @@
 
                             <div class="card mb-3 box-shadow">
                                 <div class="card-body text-left">
-                                    <img class="img-restaurant-list" src="~/images/restaurant_pictures/bar-1846137_1920.jpg" alt="Resto picture"/>
+                                    <img class="img-restaurant-list" src="~/images/restaurant_pictures/bar-1846137_1920.jpg" alt="Resto picture" />
                                     <h3>@restaurant.Name</h3>
                                     <p class="tag-details-purple-font">
                                         @foreach (var tag in restaurant.Tags)
@@ -29,7 +29,8 @@
                                             <span> | </span>
                                         }
                                     </p>
-                                    <img class="float-left" height="25px" src="~/images/logos/location/imageedit_1_3379909790.png" alt="logoLocation">
+                                    @*<img class="float-left" height="25px" src="~/images/logos/location/imageedit_1_3379909790.png" alt="logoLocation">*@
+                                    <img class="float-left location-logo" src="~/images/logos/location/imageedit_1_3379909790.png" alt="logoLocation">
                                     <p>@restaurant.City</p>
                                 </div>
                             </div>

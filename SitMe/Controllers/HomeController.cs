@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using DataAccessLibrary.Models;
 using DataAccessLibrary.Repositories.Generic;
@@ -7,20 +8,22 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SitMe.Models;
 
-namespace SitMe.Controllers {
+namespace SitMe.Controllers
+{
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IRepository<User> _userRepository;
         private readonly IRestaurantRepository _restaurantRepository;
 
-        public HomeController(  ILogger<HomeController> logger,
-                                IRepository<User> userRepository,
-                                IRestaurantRepository restaurantRepository)
+        public HomeController(
+            ILogger<HomeController> logger,
+            IRepository<User> userRepository,
+            IRestaurantRepository restaurantRepository)
         {
-            _logger = logger;
-            _userRepository = userRepository;
-            _restaurantRepository = restaurantRepository;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
+            _restaurantRepository = restaurantRepository ?? throw new ArgumentNullException(nameof(restaurantRepository));
         }
 
         public IActionResult Index()
@@ -28,34 +31,38 @@ namespace SitMe.Controllers {
             return View();
         }
 
-        public IActionResult RestaurantProfile() {
+        public IActionResult RestaurantProfile()
+        {
             return View();
         }
 
-        public async Task<IActionResult> RestaurantList() {
-            // many to many query
-            //var restaurants = await _restaurantRepository.GetRetaurantsWithTags("polish");
-            var restaurants = await _restaurantRepository.GetRetaurantsWithTags(0, 9);
+        public async Task<IActionResult> RestaurantList()
+        {
+            var restaurants = await _restaurantRepository.GetRetaurantsWithTagsAsync(0, 9);
 
             return View(restaurants);
         }
 
-        public async Task<IActionResult> RestaurantListFilter(string filterByTest) {
-            var restaurants = await _restaurantRepository.GetRetaurantsWithTags(filterByTest);
+        public async Task<IActionResult> RestaurantListFilter(string filterByTest)
+        {
+            var restaurants = await _restaurantRepository.GetRetaurantsWithTagsAsync(filterByTest);
+
             return PartialView("_RestaurantsList", restaurants);
-            //return View(restaurants);
         }
 
 
-        public IActionResult CreateReservation() {
+        public IActionResult CreateReservation()
+        {
             return View();
         }
 
-        public IActionResult UserProfile() {
+        public IActionResult UserProfile()
+        {
             return View();
         }
 
-        public IActionResult ThankYou() {
+        public IActionResult ThankYou()
+        {
             return View();
         }
 
@@ -67,7 +74,6 @@ namespace SitMe.Controllers {
         {
             return View();
         }
-
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
