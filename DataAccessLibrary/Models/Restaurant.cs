@@ -4,7 +4,7 @@ using DataAccessLibrary.Base;
 
 namespace DataAccessLibrary.Models
 {
-    public class Restaurant : Domain
+    public class Restaurant : DomainBase
     {
         public static string TableName = "[Manager].[Restaurant]";
 

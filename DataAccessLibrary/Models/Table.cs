@@ -3,7 +3,7 @@ using DataAccessLibrary.Base;
 
 namespace DataAccessLibrary.Models
 {
-    public class Table : Domain
+    public class Table : DomainBase
     {
         public static string TableName = "[Manager].[Table]";
         
@@ -11,7 +11,7 @@ namespace DataAccessLibrary.Models
 
         public Guid TableTypeId { get; set; }
         
-        public byte MaxNbOfSeats { get; set; }
+        public byte MaxNumberOfSeats { get; set; }
         
         public byte[] Picture { get; set; }
         

@@ -23,7 +23,7 @@ CREATE TABLE [Client].[User] (
 [Password] nvarchar(100),
 [FirstName] nvarchar(30),
 [LastName] nvarchar(50),
-[TelephoneNb] nvarchar(30)
+[TelephoneNumber] nvarchar(30)
 )
 
 
@@ -52,7 +52,7 @@ CREATE TABLE [Client].[Reservation] (
 	FOREIGN KEY ([UserId]) REFERENCES [Client].[User] ([Id]),
 [StartDateTime] smalldatetime NOT NULL,
 [EndDateTime] smalldatetime NOT NULL,
-[NbOfPeople] tinyint NOT NULL,
+[NumberOfPeople] tinyint NOT NULL,
 [CustomerSpecialRequest] nvarchar(300),
 [IsConfirmed] bit NOT NULL,
 [CustomerArrived] bit
@@ -100,7 +100,7 @@ CREATE TABLE [Manager].[Table] (
 [Name] nvarchar(50),
 [TableTypeId] uniqueidentifier NOT NULL
 	FOREIGN KEY ([TableTypeId]) REFERENCES [Manager].[TableType] ([Id]),
-[MaxNbOfSeats] tinyint NOT NULL,
+[MaxNumberOfSeats] tinyint NOT NULL,
 [Picture] image,
 [LocationInRestaurant] nvarchar(50) NOT NULL,
 [IsVisibleForUsers] bit NOT NULL,

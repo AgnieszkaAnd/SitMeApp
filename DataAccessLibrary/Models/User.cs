@@ -2,7 +2,7 @@
 
 namespace DataAccessLibrary.Models
 {
-    public class User : Domain
+    public class User : DomainBase
     {
         public static string TableName { get; } = "[Client].[User]";
         
@@ -16,6 +16,6 @@ namespace DataAccessLibrary.Models
         
         public string LastName { get; set; }
         
-        public string TelephoneNb { get; set; }
+        public string TelephoneNumber { get; set; }
     }
 }

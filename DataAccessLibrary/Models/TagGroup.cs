@@ -4,7 +4,7 @@ using DataAccessLibrary.Base;
 
 namespace DataAccessLibrary.Models
 {
-    public class TagGroup : Domain
+    public class TagGroup : DomainBase
     {
         public static string TableName = "[Manager].[TagGroup]";
 

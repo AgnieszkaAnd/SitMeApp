@@ -11,7 +11,7 @@ namespace DataAccessLibrary.Repositories.Generic
     // TODO change T to eg. IDataTable - with eg. property TableName
     // so we can know more about the class
     public class Repository<T> : IRepository<T>
-        where T : Domain
+        where T : DomainBase
     {
         private readonly ISqlDataAccess _database;
 

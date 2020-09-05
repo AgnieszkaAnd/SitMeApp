@@ -2,7 +2,7 @@
 
 namespace DataAccessLibrary.Base
 {
-    public abstract class Domain
+    public abstract class DomainBase
     {
         public Guid Id { get; set; }
     }

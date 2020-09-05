@@ -6,7 +6,7 @@ using DataAccessLibrary.Base;
 namespace DataAccessLibrary.Repositories.Generic
 {
     public interface IRepository<T>
-        where T : Domain
+        where T : DomainBase
     {
         Task<List<T>> GetAllAsync();
 

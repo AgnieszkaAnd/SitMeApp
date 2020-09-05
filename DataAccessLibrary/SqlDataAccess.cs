@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
+using DataAccessLibrary.Exceptions;
 using Microsoft.Extensions.Configuration;
 
 namespace DataAccessLibrary
@@ -30,7 +31,10 @@ namespace DataAccessLibrary
             {
                 Console.WriteLine(e);
                 ConnectionAvailable = false;
-                throw;
+                // robi throw ex i nie stracimy call stacka
+                var ex = new DataAccessException("sql conn exeption", e);
+                throw ex; // keeps stacktrace
+                // throw e; - bad practice - kasuje to co było do tej pory i nie pokaże stacktrace
             }
         }
 

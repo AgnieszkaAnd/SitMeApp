@@ -3,7 +3,7 @@ using DataAccessLibrary.Base;
 
 namespace DataAccessLibrary.Models
 {
-    public class Reservation : Domain
+    public class Reservation : DomainBase
     {
         public static string TableName = "[Client].[Reservation]";
 
@@ -13,7 +13,7 @@ namespace DataAccessLibrary.Models
         
         public DateTime EndDateTime { get; set; }
         
-        public byte NbOfPeople { get; set; }
+        public byte NumberOfPeople { get; set; }
         
         public string CustomerSpecialRequest { get; set; }
         
