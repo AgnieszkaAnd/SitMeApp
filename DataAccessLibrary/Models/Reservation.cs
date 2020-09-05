@@ -5,7 +5,7 @@ namespace DataAccessLibrary.Models
 {
     public class Reservation : Domain
     {
-        public static string TableName = "[Client].[Reservation]";
+        public static string TableName { get; } = "[Client].[Reservation]";
 
         public Guid UserId { get; set; }
         

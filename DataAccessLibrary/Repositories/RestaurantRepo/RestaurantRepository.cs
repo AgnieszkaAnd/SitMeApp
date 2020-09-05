@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DataAccessLibrary.Base;
 using DataAccessLibrary.Models;
 using DataAccessLibrary.Repositories.Generic;
 

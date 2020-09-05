@@ -5,7 +5,7 @@ namespace DataAccessLibrary.Models
 {
     public class Table : Domain
     {
-        public static string TableName = "[Manager].[Table]";
+        public static string TableName { get; } = "[Manager].[Table]";
         
         public string Name { get; set; }
 

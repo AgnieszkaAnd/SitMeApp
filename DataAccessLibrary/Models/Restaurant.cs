@@ -6,7 +6,7 @@ namespace DataAccessLibrary.Models
 {
     public class Restaurant : Domain
     {
-        public static string TableName = "[Manager].[Restaurant]";
+        public static string TableName { get; } = "[Manager].[Restaurant]";
 
         public string Name { get; set; }
         
