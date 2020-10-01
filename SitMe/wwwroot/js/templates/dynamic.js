@@ -1,12 +1,13 @@
 ﻿export function generateCard(reservation) {
     return `<div class="card mb-3">
-                <img class="card-img-top" src="./reservationphoto.jpg" alt="Card image cap">
+
+                <img class="card-img-top" src="~/images/reservations/reservationphoto.jpg" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">
                         <b id="">${reservation.restaurantName}</b>
                     </h5>
-                    <p class="card-text">${reservation.address}
-                        <br>${reservation.time}<br>${reservation.guests}
+                    <p class="reservations-data">Address:  ${reservation.address}
+                        <br>Time:  ${reservation.time}<br>Guests:  ${reservation.guests}
                     </p>
                     <a href="#" class="card-link">Cancel</a>
                     <a href="#" class="card-link">Change</a>
