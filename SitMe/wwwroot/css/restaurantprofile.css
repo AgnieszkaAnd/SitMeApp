@@ -10,8 +10,8 @@
       display: flex;
       flex-direction: row;
       background-color: white;
-      font-size: 1.5rem;
-      min-height: 9rem;
+      font-size: 4rem;
+      min-height: 1rem;
       margin-bottom: 2rem;
   }
   
@@ -37,7 +37,7 @@
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
-    padding-block: 0;
+    padding: 0;
     max-height: 9rem;
 }
   
@@ -218,7 +218,7 @@ input[type=submit], select {
   }
   
   input[type=special-reservation] {
-    background-color: #4E207B;;  
+    background-color: #4E207B;  
     border: none;
     color: white;
     padding: 15px 32px;
