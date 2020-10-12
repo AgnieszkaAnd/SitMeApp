@@ -18,45 +18,72 @@
 
     <div class="row">
         <div class="column left" style="background-color:rgb(255, 255, 255);">
-          <form class="form--box" action="/action_page.php">
-            <p style="font-family: Lao Muang Khong;font-style: normal;font-weight: bold;font-size: 24px;line-height: 28px;
+            <form class="form--box" action="/action_page.php">
+                <p style="font-family: Lao Muang Khong;font-style: normal;font-weight: bold;font-size: 24px;line-height: 28px;
             ">Reservation Form</p>
-                <div>
-                  <label for="quantity">Quantity</label><br>
-                    <select id="quantity" name="quantity">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
+                <div class="col mb-3">
+                    <select class="custom-select d-block w-100" for="nrofguests" id="nrofguests" required>
+                        <option value="">Nr of guests</option>
+                        <option>1</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
                     </select>
+                    <div class="invalid-feedback">
+                        Please select a valid number.
+                    </div>
                 </div>
-                  <br>
-                  <div class="date-time">
-                    <label for="date">Date</label><label for="time">Time</label><br>
-                    <select id="date" name="date">
-                    <option value="1">1</option>
-                    <option value="2">2</option> 
+                <div class="col mb-3">
+                    <select class="custom-select d-block w-100" for="date" id="date" required>
+                        <option value="">19/07/2020</option>
+                        <option>TBD</option>
                     </select>
-                    <select id="time" name="time">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
+                    <div class="invalid-feedback">
+                        Please provide a valid state.
+                    </div>
+                </div>
+                <div class="col mb-3">
+                    <select class="custom-select d-block w-100" for="time" id="time" required>
+                        <option value="">7:00 PM</option>
+                        <option>TBD</option>
                     </select>
-                  </div>
-                  <div class="form-check">
+                    <div class="invalid-feedback">
+                        Please provide a valid hours.
+                    </div>
+                </div>
+
+                <div class="form-check">
                     <input type="checkbox" class="form-check-input" id="materialChecked2" checked>
                     <label class="form-check-label" for="materialChecked2" style="font-size: small;">Show tables to share as well</label>
-                  </div>
-                  <br>
-                  <input type="find-table" value="Find Table">
-                  <br>
-                  <h3 style="font-size: 14px;">If you want to make a bigger reservation please choose option below</h3>
-                  <input type="special-reservation" value="Special reservation">
-          </form>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block"
+                        style="background-color: #8D55C6;
+                            border: none;
+                            color: white;
+                            padding: 15px 32px;
+                            text-align: center;
+                            font-size: 16px;
+                            width: 100%;
+                            font-weight: bold;" type="submit">
+                    Find Table
+                </button>
+                <br>
+                <h3 style="font-size: 12px;">If you want to make a bigger reservation please choose option below</h3>
+                <button class="btn btn-primary btn-lg btn-block"
+                        style="background-color: #4e237b;
+                            border: none;
+                            color: white;
+                            padding: 15px 32px;
+                            text-align: center;
+                            font-size: 16px;
+                            width: 100%;
+                            font-weight: bold;" type="submit">
+                    Special Reservation
+                </button>
+            </form>
         </div>
 
 
@@ -107,8 +134,6 @@
         </div>
       </div>
 
-
-    <div class="main-content">ABC</div>  
 
 
 
