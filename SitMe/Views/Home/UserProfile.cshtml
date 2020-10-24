@@ -1,3 +1,4 @@
+@model User
 
     @{
         ViewData["Title"] = "User Profile";
@@ -80,3 +81,4 @@
             </div><!-- /.row -->
         </main><!-- /.container -->
     </div>
+    <script>const UserId = @(Model.Id);</script>

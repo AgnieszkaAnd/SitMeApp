@@ -1,4 +1,5 @@
-﻿export function generateCard(reservation) {
+﻿
+export function generateCard(reservation) {
     return `<div class="card mb-3">
 
                 <img class="card-img-top" src="~/images/reservations/reservationphoto.jpg" alt="Card image cap">

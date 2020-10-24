@@ -67,7 +67,6 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     const apiUrl = 'http://localhost:3000';
-    const userID = 2;
 
     const placeholder = document.querySelector('.blog-post');
 
@@ -112,7 +111,7 @@ $(document).ready(function () {
 
     function loadMyAccount() {
         const blogPost = document.querySelector('.blog-post');
-        fetch(`${apiUrl}/users/${userID}`)
+        fetch(`${apiUrl}/users/${UserId}`)
             .then(response => response.json())
             .then(accountData => {
                 let html = '';
