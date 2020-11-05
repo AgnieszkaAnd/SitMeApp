@@ -1,8 +1,10 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using DataAccessLibrary.Models;
 using DataAccessLibrary.Repositories.Generic;
 using DataAccessLibrary.Repositories.RestaurantRepo;
+using DataAccessLibrary.Repositories.UserReservations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using SitMe.Models;
@@ -13,14 +15,18 @@ namespace SitMe.Controllers {
         private readonly ILogger<HomeController> _logger;
         private readonly IRepository<User> _userRepository;
         private readonly IRestaurantRepository _restaurantRepository;
+        private readonly IUserReservations _userReservations;
 
-        public HomeController(  ILogger<HomeController> logger,
-                                IRepository<User> userRepository,
-                                IRestaurantRepository restaurantRepository)
+        public HomeController(
+            ILogger<HomeController> logger,
+            IRepository<User> userRepository,
+            IRestaurantRepository restaurantRepository,
+            IUserReservations userReservations)
         {
             _logger = logger;
             _userRepository = userRepository;
             _restaurantRepository = restaurantRepository;
+            _userReservations = userReservations;
         }
 
         public IActionResult Index()
@@ -51,8 +57,12 @@ namespace SitMe.Controllers {
             return View();
         }
 
-        public IActionResult UserProfile() {
-            return View();
+        public async Task<IActionResult> UserProfile()
+        {
+            var currentUser = await _userRepository.GetById(Guid.Parse("8834320f-58d2-4a6c-8375-008055ee36bb"));
+            //var currentUserReservations = await _userReservations.GetReservationsHistory(Guid.Parse("8834320f-58d2-4a6c-8375-008055ee36bb"));
+
+            return View(currentUser);
         }
 
         public IActionResult ThankYou() {

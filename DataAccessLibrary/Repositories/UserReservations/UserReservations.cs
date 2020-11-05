@@ -26,14 +26,14 @@ namespace DataAccessLibrary.Repositories.UserReservations
         public Task<List<Reservation>> GetUpcomingReservations(Guid UserId)
         {
             var currentTime = DateTime.Now;
-            var query = $"Select * From {_tableName} Where [UserId] = @UserId AND [StartDateTime] > currentTime ;";
+            var query = $"Select * From {_tableName} Where [UserId] = @UserId AND [StartDateTime] > {currentTime} ;";
             return _database.LoadData<Reservation, object>(query, new { UserId = UserId });
         }
 
         public Task<List<Reservation>> GetReservationsHistory(Guid UserId)
         {
             var currentTime = DateTime.Now;
-            var query = $"Select * From {_tableName} Where [UserId] = @UserId AND [StartDateTime] < currentTime ;";
+            var query = $"Select * From {_tableName} Where [UserId] = @UserId AND [StartDateTime] < {currentTime} ;";
             return _database.LoadData<Reservation, object>(query, new { UserId = UserId });
         }
 

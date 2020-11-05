@@ -7,6 +7,7 @@ using DataAccessLibrary.Models;
 using DataAccessLibrary.Repositories;
 using DataAccessLibrary.Repositories.Generic;
 using DataAccessLibrary.Repositories.RestaurantRepo;
+using DataAccessLibrary.Repositories.UserReservations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -35,6 +36,7 @@ namespace SitMe
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<IRestaurantRepository, RestaurantRepository>();
+            services.AddScoped<IUserReservations, UserReservations>();
 
             //services.AddRazorPages().AddRazorRuntimeCompilation();
         }
