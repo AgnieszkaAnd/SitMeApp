@@ -81,21 +81,12 @@
         </div><!-- /.row -->
     </main><!-- /.container -->
 </div>
-@*<script>
-        alert('user id set');
-        const UserId = '@(Model.Id)';
-        alert('user id:' + UserId);
 
-        //TODO add method call to load account details - from site.js
-        accountScript();
-    </script>*@
 <script>
     const UserId = '@(Model.Id)';
-    console.debug(UserId);
+    const UserFirstName = '@(Model.FirstName)';
+    const UserLastName = '@(Model.LastName)';
+    const UserEmail = '@(Model.Email)';
+    const UserPhone = '@(Model.TelephoneNb)';
 </script>
 <script type="module" src="~/js/account.js"></script>
-
-@*<script>
-        const UserId = '@(Model.Id)';
-        accountScript();
-    </script>*@

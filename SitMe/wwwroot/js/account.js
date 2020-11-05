@@ -54,42 +54,78 @@ $(document).ready(
         }
 
         function loadMyAccount() {
-            alert('my account loading');
             const blogPost = document.querySelector('.blog-post');
-            fetch(`${apiUrl}/users/${UserId}`)
-                .then(response => response.json())
-                .then(accountData => {
-                    let html = '';
-                    html += dynamicTemplates.showUserAccountDetails(accountData);
-                    blogPost.innerHTML = html;
+            const accountData = {
+                firstName: UserFirstName,
+                lastName: UserLastName,
+                email: UserEmail,
+                phoneNumber: UserPhone
+            }
 
-                    const form = document.querySelector('.needs-validation');
-                    form.addEventListener('submit',
-                        event => {
-                            event.preventDefault();
-                            const { firstName, lastName, phoneNumber, email } = form.elements;
+            let html = '';
+            html += dynamicTemplates.showUserAccountDetails(accountData);
+            blogPost.innerHTML = html;
 
-                            const body = {
-                                firstName: firstName.value,
-                                lastName: lastName.value,
-                                phoneNumber: phoneNumber.value,
-                                email: email.value,
-                            };
-                            fetch(`${apiUrl}/users/${userID}`,
-                                    {
-                                        method: "put",
-                                        headers: {
-                                            "Content-Type": "application/json"
-                                        },
-                                        body: JSON.stringify(body)
-                                    })
-                                .then(res => res.json())
-                                .then(res => {
-                                    console.log("Zmiana danych");
-                                    console.log(res);
-                                })
-                        })
-                })
+            const form = document.querySelector('.needs-validation');
+            form.addEventListener('submit',
+                event => {
+                    event.preventDefault();
+                    const { firstName, lastName, phoneNumber, email } = form.elements;
+
+                    const body = {
+                        firstName: firstName.value,
+                        lastName: lastName.value,
+                        phoneNumber: phoneNumber.value,
+                        email: email.value,
+                    };
+                    fetch(`${apiUrl}/users/${userID}`,
+                            {
+                                method: "put",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify(body)
+                            })
+                        .then(res => res.json())
+                        .then(res => {
+                            console.log("Zmiana danych");
+                            console.log(res);
+                        });
+                });
+            //fetch(`${apiUrl}/users/${UserId}`)
+            //    .then(response => response.json())
+            //    .then(accountData => {
+            //        let html = '';
+            //        html += dynamicTemplates.showUserAccountDetails(accountData);
+            //        blogPost.innerHTML = html;
+
+            //        const form = document.querySelector('.needs-validation');
+            //        form.addEventListener('submit',
+            //            event => {
+            //                event.preventDefault();
+            //                const { firstName, lastName, phoneNumber, email } = form.elements;
+
+            //                const body = {
+            //                    firstName: firstName.value,
+            //                    lastName: lastName.value,
+            //                    phoneNumber: phoneNumber.value,
+            //                    email: email.value,
+            //                };
+            //                fetch(`${apiUrl}/users/${userID}`,
+            //                        {
+            //                            method: "put",
+            //                            headers: {
+            //                                "Content-Type": "application/json"
+            //                            },
+            //                            body: JSON.stringify(body)
+            //                        })
+            //                    .then(res => res.json())
+            //                    .then(res => {
+            //                        console.log("Zmiana danych");
+            //                        console.log(res);
+            //                    })
+            //            })
+            //    })
         }
 
         function loadHistoricalReservations() {
